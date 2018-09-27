@@ -44,7 +44,7 @@ class Script
      */
     public function connect(string $user, string $password, string $name, string $host = 'localhost')
     {
-        $wpdb = new class($user, $password, $name, $host) extends wpdb {
+        $wpdb = new class($user, $password, $name, $host) extends \wpdb {
             // Change default value of $allowBail from TRUE to FALSE and always
             // suppress errors outputting
             /**
