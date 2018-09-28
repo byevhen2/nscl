@@ -49,6 +49,19 @@ function mime_type(string $path): string
     return ($mime['type'] ?: 'undefined/none');
 }
 
+/**
+ * @return array "publish", and maybe "private", if current user can read
+ *               private posts.
+ */
+function readable_post_statuses(): array
+{
+    if (current_user_can('read_private_posts')) {
+        return ['publish', 'private'];
+    } else {
+        return ['publish'];
+    }
+}
+
 function wp_empty($value): bool
 {
     return (empty($value) || is_wp_error($value));
