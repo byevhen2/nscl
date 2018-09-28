@@ -114,7 +114,18 @@ function unslash_left(string $uri): string
     return ltrim($uri, '\/');
 }
 
-function wrap_with(string $subject, string $wrapper): string
+/**
+ * @param string|array $subject
+ * @param string $wrapper
+ * @return string|array
+ */
+function wrap_with($subject, string $wrapper)
 {
-    return $wrapper . $subject . $wrapper;
+    if (is_string($subject)) {
+        return $wrapper . $subject . $wrapper;
+    } else {
+        return array_map(function ($string) use ($wrapper) {
+            return "{$wrapper}{$string}{$wrapper}";
+        }, $subject);
+    }
 }
