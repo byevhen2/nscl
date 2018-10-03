@@ -18,7 +18,7 @@ function load($library, $_ = null)
                 require_once "{$dir}/{$lib}.php";
             }
         } else {
-            require_once "{$dir}/{$lib}.php";
+            require_once "{$dir}/{$library}.php";
         }
 
     } else {
