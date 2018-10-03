@@ -125,6 +125,48 @@ function is_numeric_array(array $array): bool
     return ($numericCount == count($array));
 }
 
+function keys(array $array, bool $skipNumeric = true): array
+{
+    $keys = [];
+
+    foreach ($array as $key => $value) {
+        if (!is_numeric($key) || !$skipNumeric) {
+            $keys[] = $key;
+        }
+
+        if (is_array($value)) {
+            $keys = array_merge($keys, keys($value, $skipNumeric));
+        }
+    }
+
+    $keys = array_unique($keys);
+    $keys = array_values($keys); // Get rid of custom keys from array_unique()
+
+    return $keys;
+}
+
+function keys_and_values(array $array, bool $skipNumericKeys = true): array
+{
+    $items = [];
+
+    foreach ($array as $key => $value) {
+        if (!is_numeric($key) || !$skipNumericKeys) {
+            $items[] = $key;
+        }
+
+        if (!is_array($value)) {
+            $items[] = $value;
+        } else {
+            $items = array_merge($items, keys_and_values($value, $skipNumericKeys));
+        }
+    }
+
+    $items = array_unique($items);
+    $items = array_values($items);
+
+    return $items;
+}
+
 /**
  * @param array $array
  * @return mixed|false The value of the last key or FALSE if the array is empty.
@@ -138,4 +180,22 @@ function last_key($array)
     // on big arrays
     $keys = array_keys($array);
     return end($keys);
+}
+
+/**
+ * @param array $array
+ * @return array All values of the multidimensional array.
+ */
+function values(array $array): array
+{
+    $values = [];
+
+    array_walk_recursive($array, function ($value) use (&$values) {
+        $values[] = $value;
+    });
+
+    $values = array_unique($values);
+    $values = array_values($values); // Get rid of custom keys from array_unique()
+
+    return $values;
 }
