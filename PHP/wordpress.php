@@ -17,6 +17,36 @@ function check_hash($value, string $hash): bool
     return ($hash === $correctHash);
 }
 
+function check_option(string $option, $value, $operator = '=')
+{
+    global $wpdb;
+
+    $operator = strtoupper($operator);
+
+    if (!in_array($operator, ['=', '!=', '>', '<', '>=', '<=', 'EXISTS'])) {
+        // Invalid operator
+        return false;
+    }
+
+    if ($operator == 'EXISTS') {
+        $where = '';
+    } else {
+        $value = maybe_serialize($value);
+        $where = $wpdb->prepare("AND `option_value` {$operator} %s", $value);
+    }
+
+    // The code partly from function get_option(). See also
+    // get_uncached_option() here
+    $suppressStatus = $wpdb->suppress_errors();
+
+    $query  = $wpdb->prepare("SELECT COUNT(1) FROM {$wpdb->options} WHERE `option_name` = %s {$where} LIMIT 1", $option);
+    $result = $wpdb->get_var($query);
+
+    $wpdb->suppress_errors($suppressStatus);
+
+    return (bool)$result;
+}
+
 /**
  * @param mixed $value
  * @return string The hash as a 32-character hexadecimal number.
@@ -41,6 +71,25 @@ function generate_slug(string $title): string
     // translate something like "%d0%be%d0%b4%d0%b8%d0%bd" into "один"
     $slug = urldecode($slug);
     return $slug;
+}
+
+function get_uncached_option(string $option, $default = false)
+{
+    global $wpdb;
+
+    // The code partly from function get_option()
+    $suppressStatus = $wpdb->suppress_errors();
+
+    $query = $wpdb->prepare("SELECT `option_value` FROM {$wpdb->options} WHERE `option_name` = %s LIMIT 1", $option);
+    $row   = $wpdb->get_row($query);
+
+    $wpdb->supress_errors($suppressStatus);
+
+    if (is_object($row)) {
+        return maybe_unserialize($row->option_value);
+    } else {
+        return $default;
+    }
 }
 
 function mime_type(string $path): string
