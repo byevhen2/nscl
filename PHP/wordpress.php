@@ -47,6 +47,16 @@ function check_option(string $option, $value, $operator = '=')
     return (bool)$result;
 }
 
+function check_option_length(string $option): int
+{
+    global $wpdb;
+
+    $query  = $wpdb->prepare("SELECT LENGTH(`option_value`) FROM {$wpdb->options} WHERE `option_name` = '%s'", $option);
+    $length = (int)$wpdb->get_var($query); // Also convert null (no result) into 0
+
+    return $length;
+}
+
 /**
  * @param mixed $value
  * @return string The hash as a 32-character hexadecimal number.
