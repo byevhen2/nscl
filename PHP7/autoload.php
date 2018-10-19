@@ -4,28 +4,30 @@ declare(strict_types = 1);
 
 namespace just; // Change this with your namespace
 
-/**
- * @param string|array $library Library or libraries to load.
- * @param string|array|null $_ More libraries to load.
- */
-function load_module($library, $_ = null)
-{
-    if (is_null($_)) {
-        $dir = __DIR__;
+if (!function_exists(__NAMESPACE__ . '\load_module')) {
+    /**
+     * @param string|array $library Library or libraries to load.
+     * @param string|array|null $_ More libraries to load.
+     */
+    function load_module($library, $_ = null)
+    {
+        if (is_null($_)) {
+            $dir = __DIR__;
 
-        if (is_array($library)) {
-            foreach ($library as $lib) {
-                require_once "{$dir}/{$lib}.php";
+            if (is_array($library)) {
+                foreach ($library as $lib) {
+                    require_once "{$dir}/{$lib}.php";
+                }
+            } else {
+                require_once "{$dir}/{$library}.php";
             }
+
         } else {
-            require_once "{$dir}/{$library}.php";
-        }
+            $libraries = func_get_args();
 
-    } else {
-        $libraries = func_get_args();
-
-        foreach ($libraries as $lib) {
-            load_module($lib);
+            foreach ($libraries as $lib) {
+                load_module($lib);
+            }
         }
     }
 }
