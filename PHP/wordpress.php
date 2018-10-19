@@ -71,6 +71,53 @@ function create_hash($value): string
     }
 }
 
+/**
+ * @param string $table Table name without prefix.
+ * @param array $fields Example: <pre>["id" => "INT(1) NOT NULL AUTO_INCREMENT"].</pre>
+ * @param string|array $primaryKey One or more fields (field names).
+ * @param array $config Table configuration parameters, like CHARSET or ENGINE.
+ */
+function create_table(string $table, array $fields, $primaryKey = null, array $config = []): bool
+{
+    global $wpdb;
+
+    $table  = $wpdb->prefix . $table;
+    $config = array_merge(['CHARSET' => 'utf8', 'AUTO_INCREMENT' => 1], $config);
+
+    // Init primary key
+    if (!is_null($primaryKey)) {
+        if (is_array($primaryKey)) {
+            $primaryKey = implode(', ', $primaryKey);
+        }
+    } else {
+        // Get first field
+        $names = array_keys($fields);
+        $primaryKey = reset($names);
+    }
+
+    // Stringify $fields
+    array_walk($fields, function (&$value, $name) {
+        $value = "{$name} {$value}";
+    });
+
+    $fields = implode(', ', $fields);
+
+    // Stringify $config
+    array_walk($config, function (&$value, $key) {
+        if (empty($value)) { // Example [..., "DEFAULT" => ""]
+            $value = $key;
+        } else if (!is_numeric($key)) { // Skip numeric indexes
+            $value = "{$key}={$value}";
+        }
+    });
+
+    $config = implode(' ', $config);
+
+    $sql = "CREATE TABLE IF NOT EXISTS {$table} ({$fields}, PRIMARY KEY ({$primaryKey})) {$config}";
+
+    return $wpdb->query($sql);
+}
+
 function generate_slug(string $title): string
 {
     // Decode any %## encoding in the title
