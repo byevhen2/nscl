@@ -2,13 +2,13 @@
 
 declare(strict_types = 1);
 
-namespace just;
+namespace just; // Change this with your namespace
 
 /**
  * @param string|array $library Library or libraries to load.
  * @param string|array|null $_ More libraries to load.
  */
-function load($library, $_ = null)
+function load_module($library, $_ = null)
 {
     if (is_null($_)) {
         $dir = __DIR__;
@@ -25,7 +25,7 @@ function load($library, $_ = null)
         $libraries = func_get_args();
 
         foreach ($libraries as $lib) {
-            load($lib);
+            load_module($lib);
         }
     }
 }
