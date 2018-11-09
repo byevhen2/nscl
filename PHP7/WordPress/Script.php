@@ -2,7 +2,9 @@
 
 declare(strict_types = 1);
 
-if (!class_exists('Script')) {
+namespace Just\WordPress;
+
+if (!class_exists(__NAMESPACE__ . '\Script')) {
 
     class Script
     {
