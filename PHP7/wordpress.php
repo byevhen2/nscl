@@ -38,11 +38,11 @@ if (!function_exists('check_option')) {
             $where = $wpdb->prepare("AND `option_value` {$operator} %s", $value);
         }
 
-        // The code partly from function get_option(). See also
-        // get_uncached_option() here
-        $suppressStatus = $wpdb->suppress_errors();
+        // The code partly from function get_option(). See also get_uncached_option()
+        $suppressStatus = $wpdb->suppress_errors(); // Set to suppress errors and
+                                                    // save the previous value
 
-        $query  = $wpdb->prepare("SELECT COUNT(1) FROM {$wpdb->options} WHERE `option_name` = %s {$where} LIMIT 1", $option);
+        $query  = $wpdb->prepare("SELECT option_id FROM {$wpdb->options} WHERE `option_name` = %s {$where} LIMIT 1", $option);
         $result = $wpdb->get_var($query);
 
         $wpdb->suppress_errors($suppressStatus);
@@ -148,7 +148,8 @@ if (!function_exists('get_uncached_option')) {
         global $wpdb;
 
         // The code partly from function get_option()
-        $suppressStatus = $wpdb->suppress_errors();
+        $suppressStatus = $wpdb->suppress_errors(); // Set to suppress errors and
+                                                    // save the previous value
 
         $query = $wpdb->prepare("SELECT `option_value` FROM {$wpdb->options} WHERE `option_name` = %s LIMIT 1", $option);
         $row   = $wpdb->get_row($query);
