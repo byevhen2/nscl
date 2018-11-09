@@ -129,6 +129,12 @@ if (!function_exists('create_table')) {
 }
 
 if (!function_exists('generate_slug')) {
+    /**
+     * @param string $title
+     * @return string
+     *
+     * @see generate_text()
+     */
     function generate_slug(string $title): string
     {
         // Decode any %## encoding in the title
@@ -139,6 +145,19 @@ if (!function_exists('generate_slug')) {
         // translate something like "%d0%be%d0%b4%d0%b8%d0%bd" into "один"
         $slug = urldecode($slug);
         return $slug;
+    }
+}
+
+if (!function_exists('generate_text')) {
+    /**
+     * @param string $slug
+     * @return string
+     *
+     * @see generate_slug()
+     */
+    function generate_text(string $slug): string
+    {
+        return ucfirst(str_replace(['-', '_'], ' ', $slug));
     }
 }
 
