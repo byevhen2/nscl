@@ -65,6 +65,27 @@ if (!function_exists('array_length')) {
     }
 }
 
+if (!function_exists('array_remove')) {
+    /**
+     * Remove value from the array.
+     *
+     * @param array $array
+     * @param mixed $value
+     * @param bool $resetIndexes Optional. <b>false</b> by default.
+     * @return array
+     */
+    function array_remove(array $array, $value, bool $resetIndexes = false): array
+    {
+        $index = array_search($value, $array);
+
+        if ($index !== false) {
+            unset($array[$index]);
+        }
+
+        return ($resetIndexes) ? array_values($array) : $array;
+    }
+}
+
 if (!function_exists('as_array')) {
     /**
      * Also note function is_countable() in PHP 7.3.
