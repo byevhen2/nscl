@@ -58,6 +58,31 @@ if (!function_exists('array_disjunction')) {
     }
 }
 
+if (!function_exists('array_insert_after')) {
+    /**
+     * Add an array after the specified key in the associative array.
+     *
+     * @param mixed $searchKey
+     * @param array $insert Array to insert.
+     * @param array $array Subject array.
+     * @return array Result array with inserted items.
+     */
+    function array_insert_after($searchKey, array $insert, array $array)
+    {
+        $index = array_search($searchKey, array_keys($array));
+
+        if ($index !== false) {
+            $result = array_slice($array, 0, $index + 1, true)
+                + $insert
+                + array_slice($array, $index + 1, count($array), true);
+        } else {
+            $result = $array + $insert;
+        }
+
+        return $result;
+    }
+}
+
 if (!function_exists('array_length')) {
     function array_length($var): int
     {
