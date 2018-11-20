@@ -42,7 +42,7 @@ if (!function_exists('run')) {
     /**
      * @param string $scriptFile
      * @param array $args
-     * @param array $output If the <i>$output</i> argument is present, then the
+     * @param array $output If the <b>$output</b> argument is present, then the
      *                      specified array will be filled with every line of output
      *                      from the command.
      * @return string The last line from the result of the command.

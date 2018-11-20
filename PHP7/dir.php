@@ -102,7 +102,7 @@ if (!function_exists('scan_dir')) {
         $path = rtrim($path, '\/') . DIRECTORY_SEPARATOR;
         $dirs[] = $path;
 
-        $dirsDepth = [$path => 0]; // [%Path to dir% => %Dir depth%]
+        $dirsDepth = [$path => 0]; // [Path to dir => Dir depth]
 
         // Scan directories
         foreach ($dirsDepth as $dir => &$depth) {
