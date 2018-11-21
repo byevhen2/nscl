@@ -4,10 +4,15 @@ declare(strict_types = 1);
 
 if (!function_exists('uuid_v4')) {
     /**
+     * @param int|null $seed Optional. Null by default.
      * @return string UUID v4 like <i>08a9f21b-df0f-439e-bb8c-e07548cdd270</i>.
      */
-    function uuid_v4(): string
+    function uuid_v4($seed = null): string
     {
+        if (!is_null($seed)) {
+            mt_srand($seed);
+        }
+
         return sprintf(
             '%04x%04x-%04x-%04x-%04x-%04x%04x%04x',
             // 32 bits for "time_low"
