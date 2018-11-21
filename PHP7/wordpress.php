@@ -163,7 +163,7 @@ if (!function_exists('generate_text')) {
 
 if (!function_exists('get_uncached_option')) {
     /**
-     * @global \wpdb $wpdb
+     * @global wpdb $wpdb
      *
      * @param string $option Option name.
      * @param mixed $default Optional. <b>false</b> by default.

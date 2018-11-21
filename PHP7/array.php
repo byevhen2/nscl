@@ -116,7 +116,7 @@ if (!function_exists('as_array')) {
      * Also note function is_countable() in PHP 7.3.
      *
      * @param mixed $value
-     * @return \ArrayIterator
+     * @return ArrayIterator
      */
     function as_array($value)
     {
