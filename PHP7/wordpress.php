@@ -192,6 +192,17 @@ if (!function_exists('get_uncached_option')) {
     }
 }
 
+if (!function_exists('is_active_plugin')) {
+    function is_active_plugin(string $plugin): bool
+    {
+        if (!function_exists('is_plugin_active')) {
+            include_once ABSPATH . 'wp-admin/includes/plugin.php';
+        }
+
+        return is_plugin_active($plugin);
+    }
+}
+
 if (!function_exists('mime_type')) {
     function mime_type(string $path): string
     {
