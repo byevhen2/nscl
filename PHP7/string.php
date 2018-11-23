@@ -2,23 +2,6 @@
 
 declare(strict_types = 1);
 
-if (!function_exists('str2bool')) {
-    /**
-     * Convert string into boolean value.
-     *
-     * @param string $string
-     * @return bool
-     */
-    function str2bool(string $string): bool
-    {
-        if (in_array($string, ['false', 'off', 'no', 'disable', 'disabled'])) {
-            return false;
-        } else {
-            return boolval($string);
-        }
-    }
-}
-
 if (!function_exists('str_ends_with')) {
     /**
      * @param string $haystack
@@ -57,7 +40,24 @@ if (!function_exists('str_starts_with')) {
     }
 }
 
-if (!function_exists('strradd')) {
+if (!function_exists('str_to_bool')) {
+    /**
+     * Convert string into boolean value.
+     *
+     * @param string $string
+     * @return bool
+     */
+    function str_to_bool(string $string): bool
+    {
+        if (in_array($string, ['false', 'off', 'no', 'disable', 'disabled'])) {
+            return false;
+        } else {
+            return boolval($string);
+        }
+    }
+}
+
+if (!function_exists('str_radd')) {
     /**
      * Add number starting from the most right position of the string. For example:
      * <i>strradd("0.12", 125) = "1.37"</i>
@@ -66,7 +66,7 @@ if (!function_exists('strradd')) {
      * @param int $add
      * @return string
      */
-    function strradd(string $str, int $add = 1): string
+    function str_radd(string $str, int $add = 1): string
     {
         for ($i = strlen($str) - 1; $i >= 0; $i--) {
             if ($str[$i] == '.' || $str[$i] == ',') {
