@@ -22,6 +22,17 @@ if (!function_exists('validate_bool')) {
     }
 }
 
+if (!function_exists('validate_bool_or_string')) {
+    function validate_bool_or_string($raw)
+    {
+        if (is_string($raw) && !in_array($raw, ['true', 'yes', '1', 'on', 'false', 'no', '0', 'off'])) {
+            return validate_string($raw);
+        } else {
+            return validate_bool($raw);
+        }
+    }
+}
+
 if (!function_exists('validate_id')) {
     /**
      * @param mixed $raw The value to convert to ID.
@@ -112,5 +123,12 @@ if (!function_exists('validate_relation')) {
         } else {
             return $default;
         }
+    }
+}
+
+if (!function_exists('validate_string')) {
+    function validate_string($raw)
+    {
+        return filter_var($raw, FILTER_SANITIZE_STRING);
     }
 }
