@@ -161,6 +161,19 @@ if (!function_exists('generate_text')) {
     }
 }
 
+if (!function_exists('get_current_frontend_url')) {
+    function get_current_frontend_url(bool $stripQueryArgs = false): string
+    {
+        $url = get_permalink();
+
+        if (!empty($_SERVER['QUERY_STRING']) && !$stripQueryArgs) {
+            $url .= '?' . $_SERVER['QUERY_STRING'];
+        }
+
+        return $url;
+    }
+}
+
 if (!function_exists('get_uncached_option')) {
     /**
      * @global wpdb $wpdb

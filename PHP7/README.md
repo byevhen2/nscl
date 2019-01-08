@@ -1,4 +1,4 @@
-## Functions (83)
+## Functions (85)
 
 * `_get()` (_request.php_)
 * `_post()` (_request.php_)
@@ -27,6 +27,8 @@
 * `generate_slug()` (_wordpress.php_)
 * `generate_text()` (_wordpress.php_)
 * `get_args()` (_script.php_)
+* `get_current_frontend_url()` (_wordpress.php_)
+* `get_current_url()` (_url.php_)
 * `get_uncached_option()` (_wordpress.php_)
 * `hex_to_rgb()` (_color.php_)
 * `implodef()` (_array.php_)
