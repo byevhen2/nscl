@@ -85,3 +85,24 @@
 * `values()` (_array.php_)
 * `wp_empty()` (_wordpress.php_)
 * `wrap_with()` (_format.php_)
+
+## Classes (7)
+
+### /WordPress/Cron/ (3)
+
+* Just\WordPress\Cron\\`Cron`
+* Just\WordPress\Cron\\`CronInterval`
+* Just\WordPress\Cron\\`Crons`
+
+### /WordPress/Notices/ (1)
+
+* Just\WordPress\Notices\\`AdminNotice`
+
+### /WordPress/ (2)
+
+* Just\WordPress\\`Options`
+* Just\WordPress\\`Script`
+
+### /Drafts/WordPress/ (1)
+
+* Just\WordPress\\`ListTable`
