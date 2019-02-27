@@ -216,6 +216,17 @@ if (!function_exists('is_active_plugin')) {
     }
 }
 
+if (!function_exists('is_wp_version')) {
+    function is_wp_version(string $atLeast, bool $clean = false): bool
+    {
+        global $wp_version;
+
+        $version = $clean ? preg_replace('/[^\d\.].*$/', '', $wp_version) : $wp_version;
+
+        return version_compare($version, $atLeast, '>=');
+    }
+}
+
 if (!function_exists('mime_type')) {
     function mime_type(string $path): string
     {
