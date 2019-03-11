@@ -2,10 +2,10 @@
 
 declare(strict_types = 1);
 
-namespace Just\WordPress\Cron;
+namespace NSCL\WordPress\Cron;
 
-use Just\WordPress\Cron\Cron;
-use Just\WordPress\Cron\CronInterval;
+use NSCL\WordPress\Cron\Cron;
+use NSCL\WordPress\Cron\CronInterval;
 
 if (!class_exists(__NAMESPACE__ . '\Crons')) {
 

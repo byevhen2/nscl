@@ -2,12 +2,12 @@
 
 declare(strict_types = 1);
 
-if (!function_exists('just_load')) {
+if (!function_exists('nscl_load')) {
     /**
      * @param string|array $library Library or libraries to load.
      * @param string|array|null $_ More libraries to load.
      */
-    function just_load($library, $_ = null)
+    function nscl_load($library, $_ = null)
     {
         if (is_null($_)) {
             $dir = __DIR__;
@@ -24,7 +24,7 @@ if (!function_exists('just_load')) {
             $libraries = func_get_args();
 
             foreach ($libraries as $lib) {
-                just_load($lib);
+                nscl_load($lib);
             }
         }
     }

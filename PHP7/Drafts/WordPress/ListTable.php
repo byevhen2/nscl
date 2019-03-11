@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-namespace Just\WordPress;
+namespace NSCL\WordPress;
 
 if (!class_exists(__NAMESPACE__ . '\ListTable')) {
 

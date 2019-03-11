@@ -37,7 +37,6 @@
 * `is_numeric_array()` (_array.php_)
 * `is_valid_url()` (_validate.php_)
 * `is_wp_version()` (_wordpress.php_)
-* `just_load()` (_load.php_)
 * `keys()` (_array.php_)
 * `keys_and_values()` (_array.php_)
 * `last_key()` (_array.php_)
@@ -46,6 +45,7 @@
 * `make_dir()` (_dir.php_)
 * `mime_type()` (_wordpress.php_)
 * `next_timestamp_with_time()` (_date.php_)
+* `nscl_load()` (_load.php_)
 * `parse_time()` (_date.php_)
 * `php_executable()` (_script.php_)
 * `readable_post_statuses()` (_wordpress.php_)
@@ -91,19 +91,19 @@
 
 ### /WordPress/Cron/ (3)
 
-* Just\WordPress\Cron\\`Cron`
-* Just\WordPress\Cron\\`CronInterval`
-* Just\WordPress\Cron\\`Crons`
+* NSCL\WordPress\Cron\\`Cron`
+* NSCL\WordPress\Cron\\`CronInterval`
+* NSCL\WordPress\Cron\\`Crons`
 
 ### /WordPress/Notices/ (1)
 
-* Just\WordPress\Notices\\`AdminNotice`
+* NSCL\WordPress\Notices\\`AdminNotice`
 
 ### /WordPress/ (2)
 
-* Just\WordPress\\`Options`
-* Just\WordPress\\`Script`
+* NSCL\WordPress\\`Options`
+* NSCL\WordPress\\`Script`
 
 ### /Drafts/WordPress/ (1)
 
-* Just\WordPress\\`ListTable`
+* NSCL\WordPress\\`ListTable`

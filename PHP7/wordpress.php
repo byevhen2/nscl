@@ -182,7 +182,7 @@ if (!function_exists('get_uncached_option')) {
      * @param mixed $default Optional. <b>false</b> by default.
      * @return mixed Option value or default value.
      *
-     * @see Just\WordPress\Options::getUncached()
+     * @see NSCL\WordPress\Options::getUncached()
      */
     function get_uncached_option(string $option, $default = false)
     {

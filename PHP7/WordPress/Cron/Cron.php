@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-namespace Just\WordPress\Cron;
+namespace NSCL\WordPress\Cron;
 
 if (!class_exists(__NAMESPACE__ . '\Cron')) {
 

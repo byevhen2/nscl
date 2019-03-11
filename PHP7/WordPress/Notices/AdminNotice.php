@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-namespace Just\WordPress\Notices;
+namespace NSCL\WordPress\Notices;
 
 if (!class_exists(__NAMESPACE__ . '\AdminNotice')) {
 

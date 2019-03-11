@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-namespace Just;
+namespace NSCL;
 
 if (!defined(__NAMESPACE__ . '\ROOT')) {
     define(__NAMESPACE__ . '\ROOT', __DIR__ . DIRECTORY_SEPARATOR);
