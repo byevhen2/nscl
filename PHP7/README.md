@@ -1,4 +1,4 @@
-## Functions (86)
+## Functions (87)
 
 * `_get()` (_request.php_)
 * `_post()` (_request.php_)
@@ -71,6 +71,7 @@
 * `str_to_bool()` (_string.php_)
 * `str_radd()` (_string.php_)
 * `to_long_hex_color()` (_color.php_)
+* `trim_decimal_zeros()` (_format.php_)
 * `unique_filename()` (_file.php_)
 * `unslash()` (_format.php_)
 * `unslash_left()` (_format.php_)

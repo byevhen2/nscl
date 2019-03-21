@@ -104,6 +104,18 @@ if (!function_exists('slash_left')) {
     }
 }
 
+if (!function_exists('trim_decimal_zeros')) {
+    function trim_decimal_zeros(string $number, string $decimalSeparator = '.'): string
+    {
+        $separator = preg_quote($decimalSeparator);
+
+        $number = preg_replace("/{$separator}0++$/", '', $number);
+        $number = preg_replace("/({$separator}[^0]++)0++$/", '$1', $number);
+
+        return $number;
+    }
+}
+
 if (!function_exists('unslash')) {
     /**
      * Remove trailing slash ("/") from the end of the URI.
