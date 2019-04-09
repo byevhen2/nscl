@@ -187,6 +187,19 @@ if (!function_exists('is_numeric_array')) {
     }
 }
 
+if (!function_exists('is_numeric_natural_array')) {
+    function is_numeric_natural_array(array $array): bool
+    {
+        foreach (array_keys($array) as $index => $key) {
+            if ($index !== $key) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+}
+
 if (!function_exists('keys')) {
     function keys(array $array, bool $skipNumeric = true): array
     {
