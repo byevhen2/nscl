@@ -1,5 +1,11 @@
 <?php
 
+/*
+ * Functions:
+ *     stderr
+ *     stdout
+ */
+
 declare(strict_types = 1);
 
 if (!function_exists('stderr')) {

@@ -1,5 +1,18 @@
 <?php
 
+/*
+ * Functions:
+ *     is_valid_url
+ *     validate_bool
+ *     validate_bool_or_string
+ *     validate_id
+ *     validate_ids
+ *     validate_int
+ *     validate_order
+ *     validate_relation
+ *     validate_string
+ */
+
 declare(strict_types = 1);
 
 if (!function_exists('is_valid_url')) {

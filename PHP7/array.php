@@ -1,5 +1,24 @@
 <?php
 
+/*
+ * Functions:
+ *     aimplodef
+ *     array_disjunction
+ *     array_insert_after
+ *     array_length
+ *     array_remove
+ *     as_array
+ *     first_key
+ *     implodef
+ *     is_assoc_array
+ *     is_numeric_array
+ *     is_numeric_natural_array
+ *     keys
+ *     keys_and_values
+ *     last_key
+ *     values
+ */
+
 declare(strict_types = 1);
 
 if (!function_exists('aimplodef')) {

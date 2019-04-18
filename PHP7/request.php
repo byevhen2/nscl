@@ -1,5 +1,11 @@
 <?php
 
+/*
+ * Functions:
+ *     _get
+ *     _post
+ */
+
 declare(strict_types = 1);
 
 if (!function_exists('_get')) {

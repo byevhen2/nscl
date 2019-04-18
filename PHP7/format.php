@@ -1,5 +1,19 @@
 <?php
 
+/*
+ * Functions:
+ *     decimals_count
+ *     format_size
+ *     format_size_si
+ *     remove_prefixes
+ *     slash
+ *     slash_left
+ *     trim_decimal_zeros
+ *     unslash
+ *     unslash_left
+ *     wrap_with
+ */
+
 declare(strict_types = 1);
 
 if (!function_exists('decimals_count')) {

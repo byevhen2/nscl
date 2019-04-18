@@ -1,5 +1,13 @@
 <?php
 
+/*
+ * Functions:
+ *     make_dir
+ *     real_path
+ *     remove_dir
+ *     scan_dir
+ */
+
 declare(strict_types = 1);
 
 if (!function_exists('make_dir')) {

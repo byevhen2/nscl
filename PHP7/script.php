@@ -1,5 +1,13 @@
 <?php
 
+/*
+ * Functions:
+ *     get_args
+ *     php_executable
+ *     run
+ *     run_in_background
+ */
+
 declare(strict_types = 1);
 
 if (!function_exists('get_args')) {

@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * Functions:
+ *     file_dir
+ *     file_extension
+ *     file_name
+ *     full_file_name
+ *     unique_filename
+ */
+
 declare(strict_types = 1);
 
 if (!function_exists('file_dir')) {

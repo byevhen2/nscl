@@ -1,5 +1,10 @@
 <?php
 
+/*
+ * Functions:
+ *     nscl_load
+ */
+
 declare(strict_types = 1);
 
 if (!function_exists('nscl_load')) {

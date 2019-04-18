@@ -1,5 +1,13 @@
 <?php
 
+/*
+ * Functions:
+ *     calc_nights
+ *     current_date_with_time
+ *     next_timestamp_with_time
+ *     parse_time
+ */
+
 declare(strict_types = 1);
 
 if (!function_exists('calc_nights')) {

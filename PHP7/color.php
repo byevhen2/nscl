@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * Functions:
+ *     darker_color
+ *     hex_to_rgb
+ *     light_or_dark_color
+ *     lighter_color
+ *     to_long_hex_color
+ */
+
 declare(strict_types = 1);
 
 if (!function_exists('darker_color')) {

@@ -1,5 +1,10 @@
 <?php
 
+/*
+ * Functions:
+ *     render_output
+ */
+
 declare(strict_types = 1);
 
 if (!function_exists('render_output')) {

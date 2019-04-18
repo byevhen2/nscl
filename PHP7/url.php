@@ -1,5 +1,10 @@
 <?php
 
+/*
+ * Functions:
+ *     get_current_url
+ */
+
 declare(strict_types = 1);
 
 if (!function_exists('get_current_url')) {

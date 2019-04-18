@@ -1,5 +1,13 @@
 <?php
 
+/*
+ * Functions:
+ *     regex_combine
+ *     regex_match
+ *     regex_match_all
+ *     regex_test
+ */
+
 declare(strict_types = 1);
 
 if (!function_exists('regex_combine')) {

@@ -2,6 +2,23 @@
 
 /*
  * See also PHP/WordPress/*.
+ *
+ * Functions:
+ *     check_hash
+ *     check_option
+ *     check_option_length
+ *     create_hash
+ *     create_table
+ *     generate_slug
+ *     generate_text
+ *     get_current_frontend_url
+ *     get_uncached_option
+ *     is_active_plugin
+ *     is_plugin_active
+ *     is_wp_version
+ *     mime_type
+ *     readable_post_statuses
+ *     wp_empty
  */
 
 declare(strict_types = 1);

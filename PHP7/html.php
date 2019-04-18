@@ -1,5 +1,11 @@
 <?php
 
+/*
+ * Functions:
+ *     remove_tag
+ *     remove_tag_content
+ */
+
 declare(strict_types = 1);
 
 if (!function_exists('remove_tag')) {

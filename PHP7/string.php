@@ -1,5 +1,13 @@
 <?php
 
+/*
+ * Functions:
+ *     str_ends_with
+ *     str_starts_with
+ *     str_to_bool
+ *     str_radd
+ */
+
 declare(strict_types = 1);
 
 if (!function_exists('str_ends_with')) {

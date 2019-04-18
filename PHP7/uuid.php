@@ -1,5 +1,10 @@
 <?php
 
+/*
+ * Functions:
+ *     uuid_v4
+ */
+
 declare(strict_types = 1);
 
 if (!function_exists('uuid_v4')) {
