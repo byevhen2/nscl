@@ -14,7 +14,8 @@
  *     get_current_frontend_url
  *     get_uncached_option
  *     is_active_plugin
- *     is_plugin_active
+ *     is_edit_post
+ *     is_edit_post_type
  *     is_wp_version
  *     mime_type
  *     readable_post_statuses
@@ -230,6 +231,22 @@ if (!function_exists('is_active_plugin')) {
         }
 
         return is_plugin_active($plugin);
+    }
+}
+
+if (!function_exists('is_edit_post')) {
+    function is_edit_post(): bool
+    {
+        global $pagenow;
+        return is_admin() && in_array($pagenow, array('post.php', 'post-new.php'));
+    }
+}
+
+if (!function_exists('is_edit_post_type')) {
+    function is_edit_post_type(string $postType): bool
+    {
+        global $pagenow, $typenow;
+        return is_admin() && in_array($pagenow, array('post.php', 'post-new.php')) && $typenow === $postType;
     }
 }
 

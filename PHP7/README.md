@@ -1,4 +1,4 @@
-## Functions (88)
+## Functions (90)
 
 * `_get()` (_request.php_)
 * `_post()` (_request.php_)
@@ -34,6 +34,8 @@
 * `implodef()` (_array.php_)
 * `is_active_plugin()` (_wordpress.php_)
 * `is_assoc_array()` (_array.php_)
+* `is_edit_post()` (_wordpress.php_)
+* `is_edit_post_type()` (_wordpress.php_)
 * `is_numeric_array()` (_array.php_)
 * `is_numeric_natural_array()` (_array.php_)
 * `is_valid_url()` (_validate.php_)
