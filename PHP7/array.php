@@ -7,6 +7,7 @@
  *     array_insert_after
  *     array_length
  *     array_remove
+ *     array_wrap
  *     as_array
  *     first_key
  *     implodef
@@ -127,6 +128,15 @@ if (!function_exists('array_remove')) {
         }
 
         return ($resetIndexes) ? array_values($array) : $array;
+    }
+}
+
+if (!function_exists('array_wrap')) {
+    function array_wrap(array $array, string $wrapper)
+    {
+        return array_map(function ($value) use ($wrapper) {
+            return $wrapper . $value . $wrapper;
+        }, $array);
     }
 }
 

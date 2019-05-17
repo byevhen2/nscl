@@ -1,4 +1,4 @@
-## Functions (90)
+## Functions (91)
 
 * `_get()` (_request.php_)
 * `_post()` (_request.php_)
@@ -7,6 +7,7 @@
 * `array_insert_after()` (_array.php_)
 * `array_length()` (_array.php_)
 * `array_remove()` (_array.php_)
+* `array_wrap()` (_array.php_)
 * `as_array()` (_array.php_)
 * `calc_nights()` (_date.php_)
 * `check_hash()` (_wordpress.php_)
