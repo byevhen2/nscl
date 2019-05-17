@@ -2,6 +2,7 @@
 
 /*
  * Functions:
+ *     dir_files
  *     make_dir
  *     real_path
  *     remove_dir
@@ -9,6 +10,35 @@
  */
 
 declare(strict_types = 1);
+
+if (!function_exists('dir_files')) {
+    /**
+     * @param string $dir Directory to scan.
+     * @return array [%filename% => %absolute path%]
+     */
+    function dir_files(string $dir)
+    {
+        if (!is_dir($dir)) {
+            return [];
+        }
+
+        // slash_right($dir)
+        $dir = rtrim($dir, '\/') . '/';
+
+        $files = scandir($dir);
+        $files = array_diff($files, ['.', '..']);
+        // Filter directories
+        $files = array_filter($files, function ($target) use ($dir) {
+            return is_file($dir . $target);
+        });
+
+        $paths = array_map(function ($filename) use ($dir) {
+            return $dir . $filename;
+        }, $files);
+
+        return array_combine($files, $paths);
+    }
+}
 
 if (!function_exists('make_dir')) {
     /**

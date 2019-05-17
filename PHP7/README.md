@@ -1,4 +1,4 @@
-## Functions (91)
+## Functions (92)
 
 * `_get()` (_request.php_)
 * `_post()` (_request.php_)
@@ -18,6 +18,7 @@
 * `current_date_with_time()` (_date.php_)
 * `darker_color()` (_color.php_)
 * `decimals_count()` (_format.php_)
+* `dir_files()` (_dir.php_)
 * `file_dir()` (_file.php_)
 * `file_extension()` (_file.php_)
 * `file_name()` (_file.php_)
