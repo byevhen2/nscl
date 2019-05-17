@@ -7,7 +7,7 @@
 * `array_insert_after()` (_array.php_)
 * `array_length()` (_array.php_)
 * `array_remove()` (_array.php_)
-* `array_wrap()` (_array.php_)
+* `array_wrap()` (_array.php; see also wrap()_)
 * `as_array()` (_array.php_)
 * `calc_nights()` (_date.php_)
 * `check_hash()` (_wordpress.php_)
@@ -90,7 +90,7 @@
 * `validate_string()` (_validate.php_)
 * `values()` (_array.php_)
 * `wp_empty()` (_wordpress.php_)
-* `wrap_with()` (_format.php_)
+* `wrap()` (_format.php; see also array_wrap()_)
 
 ## Classes (7)
 

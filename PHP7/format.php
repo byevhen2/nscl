@@ -11,7 +11,7 @@
  *     trim_decimal_zeros
  *     unslash
  *     unslash_left
- *     wrap_with
+ *     wrap
  */
 
 declare(strict_types = 1);
@@ -156,19 +156,19 @@ if (!function_exists('unslash_left')) {
     }
 }
 
-if (!function_exists('wrap_with')) {
+if (!function_exists('wrap')) {
     /**
      * @param string|array $subject
      * @param string $wrapper
      * @return string|array
      */
-    function wrap_with($subject, string $wrapper)
+    function wrap($subject, string $wrapper)
     {
         if (is_string($subject)) {
             return $wrapper . $subject . $wrapper;
         } else {
             return array_map(function ($string) use ($wrapper) {
-                return "{$wrapper}{$string}{$wrapper}";
+                return $wrapper . $subject . $wrapper;
             }, $subject);
         }
     }
