@@ -1,4 +1,4 @@
-# NSCL \[P\]
+# NSCL
 Non-Standard Code Library. A set of useful/tricky pieces of code.
 
 # License
