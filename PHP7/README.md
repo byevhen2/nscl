@@ -1,4 +1,4 @@
-## Functions (92)
+## Functions (93)
 
 * `_get()` (_request.php_)
 * `_post()` (_request.php_)
@@ -19,6 +19,7 @@
 * `darker_color()` (_color.php_)
 * `decimals_count()` (_format.php_)
 * `dir_files()` (_dir.php_)
+* `escape_json_unicodes()` (_json.php_)
 * `file_dir()` (_file.php_)
 * `file_extension()` (_file.php_)
 * `file_name()` (_file.php_)
