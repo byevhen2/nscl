@@ -213,7 +213,7 @@ if (!function_exists('get_uncached_option')) {
         $query = $wpdb->prepare("SELECT `option_value` FROM {$wpdb->options} WHERE `option_name` = %s LIMIT 1", $option);
         $row   = $wpdb->get_row($query);
 
-        $wpdb->supress_errors($suppressStatus);
+        $wpdb->suppress_errors($suppressStatus);
 
         if (is_object($row)) {
             return maybe_unserialize($row->option_value);
