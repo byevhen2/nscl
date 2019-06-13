@@ -3,6 +3,7 @@
 /*
  * Functions:
  *     dir_files
+ *     lock_dir
  *     make_dir
  *     real_path
  *     remove_dir
@@ -37,6 +38,29 @@ if (!function_exists('dir_files')) {
         }, $files);
 
         return array_combine($files, $paths);
+    }
+}
+
+if (!function_exists('lock_dir')) {
+    function lock_dir($dir, $allowedTypes = ['jpg', 'jpeg', 'png', 'gif', 'mp3', 'ogg'])
+    {
+        $dir = rtrim($dir, '\/') . DIRECTORY_SEPARATOR;
+
+        // Create index.php
+        @file_put_contents($dir . 'index.php', '<?php' . PHP_EOL);
+
+        // Create .../uploads/mphb/.htaccess
+        $htaccess = "Options -Indexes\n"
+            . "deny from all\n";
+
+        if (!empty($allowedTypes)) {
+            $htaccess .= "<FilesMatch '\.(jpg|jpeg|png|gif|mp3|ogg)$'>\n"
+                . "Order Allow,Deny\n"
+                . "Allow from all\n"
+                . "</FilesMatch>\n";
+        }
+
+        @file_put_contents($dir . '.htaccess', $htaccess);
     }
 }
 

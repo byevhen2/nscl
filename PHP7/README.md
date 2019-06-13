@@ -1,4 +1,4 @@
-## Functions (93)
+## Functions (94)
 
 * `_get()` (_request.php_)
 * `_post()` (_request.php_)
@@ -48,6 +48,7 @@
 * `last_key()` (_array.php_)
 * `light_or_dark_color()` (_color.php_)
 * `lighter_color()` (_color.php_)
+* `lock_dir()` (_dir.php_)
 * `make_dir()` (_dir.php_)
 * `mime_type()` (_wordpress.php_)
 * `next_timestamp_with_time()` (_date.php_)
