@@ -1,8 +1,6 @@
 <?php
 
 /*
- * See also PHP/WordPress/*.
- *
  * Functions:
  *     check_hash
  *     check_option
