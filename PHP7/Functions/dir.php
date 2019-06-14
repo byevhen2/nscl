@@ -42,7 +42,7 @@ if (!function_exists('dir_files')) {
 }
 
 if (!function_exists('lock_dir')) {
-    function lock_dir($dir, $allowedTypes = ['jpg', 'jpeg', 'png', 'gif', 'mp3', 'ogg'])
+    function lock_dir(string $dir, array $allowedTypes = ['jpg', 'jpeg', 'png', 'gif', 'mp3', 'ogg'])
     {
         $dir = rtrim($dir, '\/') . DIRECTORY_SEPARATOR;
 
