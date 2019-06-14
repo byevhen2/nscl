@@ -1,4 +1,4 @@
-## Functions (94)
+# Functions (94)
 
 * `_get()` (_request.php_)
 * `_post()` (_request.php_)
@@ -95,23 +95,153 @@
 * `wp_empty()` (_wordpress.php_)
 * `wrap()` (_format.php; see also array_wrap()_)
 
-## Classes (7)
+## Array Functions (16)
 
-### /WordPress/Cron/ (3)
+* `aimplodef()`
+* `array_disjunction()`
+* `array_insert_after()`
+* `array_length()`
+* `array_remove()`
+* `array_wrap()`
+* `as_array()`
+* `first_key()`
+* `implodef()`
+* `is_assoc_array()`
+* `is_numeric_array()`
+* `is_numeric_natural_array()`
+* `keys()`
+* `keys_and_values()`
+* `last_key()`
+* `values()`
 
-* NSCL\WordPress\Cron\\`Cron`
-* NSCL\WordPress\Cron\\`CronInterval`
-* NSCL\WordPress\Cron\\`Crons`
+## Color Functions (5)
 
-### /WordPress/Notices/ (1)
+* `darker_color()`
+* `hex_to_rgb()`
+* `light_or_dark_color()`
+* `lighter_color()`
+* `to_long_hex_color()`
 
-* NSCL\WordPress\Notices\\`AdminNotice`
+## Date Functions (4)
 
-### /WordPress/ (2)
+* `calc_nights()`
+* `current_date_with_time()`
+* `next_timestamp_with_time()`
+* `parse_time()`
 
-* NSCL\WordPress\\`Options`
-* NSCL\WordPress\\`Script`
+## Directory Functions (6)
 
-### /Drafts/WordPress/ (1)
+* `dir_files()`
+* `lock_dir()`
+* `make_dir()`
+* `real_path()`
+* `remove_dir()`
+* `scan_dir()`
 
-* NSCL\WordPress\\`ListTable`
+## File Functions (5)
+
+* `file_dir()`
+* `file_extension()`
+* `file_name()`
+* `full_file_name()`
+* `unique_filename()`
+
+## Format Functions (10)
+
+* `decimals_count()`
+* `format_size()`
+* `format_size_si()`
+* `remove_prefixes()`
+* `slash()`
+* `slash_left()`
+* `trim_decimal_zeros()`
+* `unslash()`
+* `unslash_left()`
+* `wrap()`
+
+## HTML Functions (2)
+
+* `remove_tag()`
+* `remove_tag_content()`
+
+## JSON Functions (1)
+
+* `escape_json_unicodes()`
+
+## Load Functions (1)
+
+* `nscl_load()`
+
+## Regular Expression Functions (4)
+
+* `regex_combine()`
+* `regex_match()`
+* `regex_match_all()`
+* `regex_test()`
+
+## Render Functions (1)
+
+* `render_output()`
+
+## Request Functions (2)
+
+* `_get()`
+* `_post()`
+
+## Script Functions (4)
+
+* `get_args()`
+* `php_executable()`
+* `run()`
+* `run_in_background()`
+
+## Standard I/O Functions (2)
+
+* `stderr()`
+* `stdout()`
+
+## String Functions (4)
+
+* `str_ends_with()`
+* `str_starts_with()`
+* `str_to_bool()`
+* `str_radd()`
+
+## URL Functions (1)
+
+* `get_current_url()`
+
+## UUID Functions (1)
+
+* `uuid_v4()`
+
+## Validation Functions (9)
+
+* `is_valid_url()`
+* `validate_bool()`
+* `validate_bool_or_string()`
+* `validate_id()`
+* `validate_ids()`
+* `validate_int()`
+* `validate_order()`
+* `validate_relation()`
+* `validate_string()`
+
+## WordPress Functions (16)
+
+* `check_hash()`
+* `check_option()`
+* `check_option_length()`
+* `create_hash()`
+* `create_table()`
+* `generate_slug()`
+* `generate_text()`
+* `get_current_frontend_url()`
+* `get_uncached_option()`
+* `is_active_plugin()`
+* `is_edit_post()`
+* `is_edit_post_type()`
+* `is_wp_version()`
+* `mime_type()`
+* `readable_post_statuses()`
+* `wp_empty()`

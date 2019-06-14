@@ -2,10 +2,13 @@
 
 declare(strict_types = 1);
 
-namespace NSCL\WordPress;
+namespace NSCL\WordPress\Drafts;
 
 if (!class_exists(__NAMESPACE__ . '\ListTable')) {
 
+    /**
+     * <strong>The class is unfinished.</strong>
+     */
     abstract class ListTable
     {
         const SUPPORTS_AJAX = false;
