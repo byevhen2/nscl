@@ -1,14 +1,7 @@
-/*
- * Functions:
- *     array_fill
- */
+function array_fill(count, value)
+{
+    "use strict";
 
-if (window.array_fill == undefined) {
-    function array_fill(count, value)
-    {
-        "use strict";
-
-        value = value || 0;
-        return (new Array(count)).fill(value);
-    }
+    value = value || 0;
+    return (new Array(count)).fill(value);
 }

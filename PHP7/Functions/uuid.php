@@ -1,39 +1,32 @@
 <?php
 
-/*
- * Functions:
- *     uuid_v4
- */
-
 declare(strict_types = 1);
 
-if (!function_exists('uuid_v4')) {
-    /**
-     * @param int|null $seed Optional. Null by default.
-     * @return string UUID v4 like <i>08a9f21b-df0f-439e-bb8c-e07548cdd270</i>.
-     */
-    function uuid_v4($seed = null): string
-    {
-        if (!is_null($seed)) {
-            mt_srand($seed);
-        }
-
-        return sprintf(
-            '%04x%04x-%04x-%04x-%04x-%04x%04x%04x',
-            // 32 bits for "time_low"
-            mt_rand(0, 0xffff),
-            mt_rand(0, 0xffff),
-            // 16 bits for "time_mid"
-            mt_rand(0, 0xffff),
-            // 16 bits for "time_hi_and_version", four most significant bits holds version number 4
-            mt_rand(0, 0x0fff) | 0x4000,
-            // 16 bits, 8 bits for "clk_seq_hi_res", 8 bits for "clk_seq_low", two most significant
-            // bits holds zero and one for variant DCE1.1
-            mt_rand(0, 0x3fff) | 0x8000,
-            // 48 bits for "node"
-            mt_rand(0, 0xffff),
-            mt_rand(0, 0xffff),
-            mt_rand(0, 0xffff)
-        );
+/**
+ * @param int|null $seed Optional. Null by default.
+ * @return string UUID v4 like <i>08a9f21b-df0f-439e-bb8c-e07548cdd270</i>.
+ */
+function uuid_v4($seed = null): string
+{
+    if (!is_null($seed)) {
+        mt_srand($seed);
     }
+
+    return sprintf(
+        '%04x%04x-%04x-%04x-%04x-%04x%04x%04x',
+        // 32 bits for "time_low"
+        mt_rand(0, 0xffff),
+        mt_rand(0, 0xffff),
+        // 16 bits for "time_mid"
+        mt_rand(0, 0xffff),
+        // 16 bits for "time_hi_and_version", four most significant bits holds version number 4
+        mt_rand(0, 0x0fff) | 0x4000,
+        // 16 bits, 8 bits for "clk_seq_hi_res", 8 bits for "clk_seq_low", two most significant
+        // bits holds zero and one for variant DCE1.1
+        mt_rand(0, 0x3fff) | 0x8000,
+        // 48 bits for "node"
+        mt_rand(0, 0xffff),
+        mt_rand(0, 0xffff),
+        mt_rand(0, 0xffff)
+    );
 }
