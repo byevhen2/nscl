@@ -1,4 +1,4 @@
-# Functions (94)
+# Functions (116)
 
 * `_get()` (_request.php_)
 * `_post()` (_request.php_)
@@ -31,10 +31,22 @@
 * `generate_text()` (_wordpress.php_)
 * `get_args()` (_script.php_)
 * `get_current_frontend_url()` (_wordpress.php_)
+* `get_current_id()` (_wpml.php_)
+* `get_current_language()` (_wpml.php_)
 * `get_current_url()` (_url.php_)
+* `get_current_user_language()` (_wpml.php_)
+* `get_current_user_locale()` (_wpml.php_)
+* `get_default_id()` (_wpml.php_)
+* `get_default_language()` (_wpml.php_)
+* `get_language_code_from_locale()` (_wpml.php_)
 * `get_uncached_option()` (_wordpress.php_)
+* `get_wp_language()` (_wpml.php_)
 * `hex_to_rgb()` (_color.php_)
 * `implodef()` (_array.php_)
+* `is_active_language()` (_wpml.php_)
+* `is_default_id()` (_wpml.php_)
+* `is_translatable_post_type()` (_wpml.php_)
+* `is_wpml_active()` (_wpml.php_)
 * `is_active_plugin()` (_wordpress.php_)
 * `is_assoc_array()` (_array.php_)
 * `is_edit_post()` (_wordpress.php_)
@@ -77,7 +89,17 @@
 * `str_starts_with()` (_string.php_)
 * `str_to_bool()` (_string.php_)
 * `str_radd()` (_string.php_)
+* `switch_language()` (_wpml.php_)
+* `switch_to_all_languages()` (_wpml.php_)
+* `switch_to_default_language()` (_wpml.php_)
 * `to_long_hex_color()` (_color.php_)
+* `translate_id()` (_wpml.php_)
+* `translate_page_id()` (_wpml.php_)
+* `translate_post_id()` (_wpml.php_)
+* `translate_posts_to_all_languages()` (_wpml.php_)
+* `translate_string()` (_wpml.php_)
+* `translate_taxonomies_to_all_languages()` (_wpml.php_)
+* `translate_to_all_languages()` (_wpml.php_)
 * `trim_decimal_zeros()` (_format.php_)
 * `unique_filename()` (_file.php_)
 * `unslash()` (_format.php_)
@@ -245,3 +267,28 @@
 * `mime_type()`
 * `readable_post_statuses()`
 * `wp_empty()`
+
+## WPML Functions (22)
+
+* `get_current_id()`
+* `get_current_language()`
+* `get_current_user_language()`
+* `get_current_user_locale()`
+* `get_default_id()`
+* `get_default_language()`
+* `get_language_code_from_locale()`
+* `get_wp_language()`
+* `is_active_language()`
+* `is_default_id()`
+* `is_translatable_post_type()`
+* `is_wpml_active()`
+* `switch_language()`
+* `switch_to_all_languages()`
+* `switch_to_default_language()`
+* `translate_id()`
+* `translate_page_id()`
+* `translate_post_id()`
+* `translate_posts_to_all_languages()`
+* `translate_string()`
+* `translate_taxonomies_to_all_languages()`
+* `translate_to_all_languages()`
