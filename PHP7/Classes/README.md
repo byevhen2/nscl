@@ -1,4 +1,4 @@
-# Classes (7)
+# Classes (8)
 
 ## /WordPress/Cron/ (3)
 
@@ -14,7 +14,8 @@
 
 * NSCL\WordPress\Notices\\`AdminNotice`
 
-## /WordPress/ (2)
+## /WordPress/ (3)
 
 * NSCL\WordPress\\`Options`
 * NSCL\WordPress\\`Script`
+* NSCL\WordPress\\`Singleton`
