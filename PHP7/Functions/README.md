@@ -1,4 +1,4 @@
-# Functions (116)
+# Functions (117)
 
 * `_get()` (_request.php_)
 * `_post()` (_request.php_)
@@ -101,6 +101,7 @@
 * `translate_taxonomies_to_all_languages()` (_wpml.php_)
 * `translate_to_all_languages()` (_wpml.php_)
 * `trim_decimal_zeros()` (_format.php_)
+* `typeof()` (_types.php_)
 * `unique_filename()` (_file.php_)
 * `unslash()` (_format.php_)
 * `unslash_left()` (_format.php_)
@@ -228,6 +229,10 @@
 * `str_starts_with()`
 * `str_to_bool()`
 * `str_radd()`
+
+## Type Functions (1)
+
+* `typeof()`
 
 ## URL Functions (1)
 

@@ -1,26 +1,6 @@
-# Classes (8)
+# Classes (20)
 
-## /WordPress/Cron/ (3)
-
-* NSCL\WordPress\Cron\\`Cron`
-* NSCL\WordPress\Cron\\`CronInterval`
-* NSCL\WordPress\Cron\\`Crons`
-
-## /WordPress/Drafts/ (1)
-
-* NSCL\WordPress\Drafts\\`ListTable`
-
-## /WordPress/Notices/ (1)
-
-* NSCL\WordPress\Notices\\`AdminNotice`
-
-## /WordPress/ (3)
-
-* NSCL\WordPress\\`Options`
-* NSCL\WordPress\\`Script`
-* NSCL\WordPress\\`Singleton`
-
-# PHP5 Classes (20)
+## /ToStr/ (8)
 
 * NSCL\ToStr\Reflections\\`CallbackReflection`
 * NSCL\ToStr\Reflections\\`ClosureReflection`
@@ -30,7 +10,13 @@
 * NSCL\ToStr\\`Reflection`
 * NSCL\ToStr\\`StringBuilder`
 * NSCL\ToStr\\`Stringifier`
+
+## /WordPress/Drafts/ (1)
+
 * NSCL\WordPress\Drafts\\`WPBackgroundProcess`
+
+## /WordPress/Settings/ (11)
+
 * NSCL\WordPress\Settings\Fields\\`CheckboxField`
 * NSCL\WordPress\Settings\Fields\\`MulticheckField`
 * NSCL\WordPress\Settings\Fields\\`NumberField`
@@ -42,3 +28,14 @@
 * NSCL\WordPress\Settings\\`SettingsField`
 * NSCL\WordPress\Settings\\`SettingsRegistry`
 * NSCL\WordPress\Settings\\`SettingsSection`
+
+# PHP7 Classes (8)
+
+* NSCL\WordPress\Cron\\`Cron`
+* NSCL\WordPress\Cron\\`CronInterval`
+* NSCL\WordPress\Cron\\`Crons`
+* NSCL\WordPress\Drafts\\`ListTable`
+* NSCL\WordPress\Notices\\`AdminNotice`
+* NSCL\WordPress\\`Options`
+* NSCL\WordPress\\`Script`
+* NSCL\WordPress\\`Singleton`
