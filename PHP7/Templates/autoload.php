@@ -1,12 +1,6 @@
 <?php
 
-declare(strict_types = 1);
-
 namespace NSCL;
-
-if (!defined(__NAMESPACE__ . '\ROOT')) {
-    define(__NAMESPACE__ . '\ROOT', __DIR__ . DIRECTORY_SEPARATOR);
-}
 
 spl_autoload_register(function ($className) {
     // "Namespace\Subpackage\ClassX"
@@ -22,8 +16,13 @@ spl_autoload_register(function ($className) {
     $pluginFile = str_replace('\\', DIRECTORY_SEPARATOR, $pluginFile);
     // "Subpackage/ClassX.php"
     $pluginFile .= '.php';
+    // "/path/to/root/folder/Subpackage/ClassX.php"
+    $pluginFile = __DIR__ . DIRECTORY_SEPARATOR . $pluginFile;
 
-    require ROOT . $pluginFile;
-
-    return true;
+    if (file_exists($pluginFile)) {
+        require $pluginFile;
+        return true;
+    } else {
+        return false;
+    }
 });
