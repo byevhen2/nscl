@@ -139,6 +139,23 @@ function first_key($array)
 }
 
 /**
+ * @param string $glue
+ * @param array $pieces
+ * @return string "A, B and C"
+ */
+function implode_and(string $glue, array $pieces)
+{
+    $piecesCount = count($pieces);
+
+    if ($piecesCount > 1) {
+        $lastMasterpiece = array_pop($pieces);
+        $pieces[$piecesCount - 2] .= ' and ' . $lastMasterpiece;
+    }
+
+    return implode($glue, $pieces);
+}
+
+/**
  * Join array elements with a string, previously formatting the value.
  *
  * @param string $glue Glue for values, equal to implode() function.

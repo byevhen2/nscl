@@ -1,4 +1,4 @@
-# Functions (117)
+# Functions (118)
 
 * `_get()` (_request.php_)
 * `_post()` (_request.php_)
@@ -42,6 +42,7 @@
 * `get_uncached_option()` (_wordpress.php_)
 * `get_wp_language()` (_wpml.php_)
 * `hex_to_rgb()` (_color.php_)
+* `implode_and()` (_array.php_)
 * `implodef()` (_array.php_)
 * `is_active_language()` (_wpml.php_)
 * `is_default_id()` (_wpml.php_)
@@ -118,7 +119,7 @@
 * `wp_empty()` (_wordpress.php_)
 * `wrap()` (_format.php; see also array_wrap()_)
 
-## Array Functions (16)
+## Array Functions (17)
 
 * `aimplodef()`
 * `array_disjunction()`
@@ -128,6 +129,7 @@
 * `array_wrap()`
 * `as_array()`
 * `first_key()`
+* `implode_and()`
 * `implodef()`
 * `is_assoc_array()`
 * `is_numeric_array()`
