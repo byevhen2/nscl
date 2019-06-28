@@ -4,4 +4,4 @@
 
 # PHP5 Templates (1)
 
-* `Login From` (_login-form.php_, [demo](https://byevhen2.github.io/nscl/login-form/))
+* `Login From` ([demo](https://byevhen2.github.io/nscl/login-form/))
