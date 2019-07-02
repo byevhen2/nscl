@@ -3,6 +3,22 @@
 declare(strict_types = 1);
 
 /**
+ * Add "?" sign to the URL.
+ *
+ * @param string $url
+ * @param string $queryVar Optional. "s" by default.
+ * @return string
+ */
+function add_query_sign(string $url, string $queryVar = 's'): string
+{
+    if (strpos($url, '?') === false) {
+        $url = add_query_arg($queryVar, '', $url);
+    }
+
+    return $url;
+}
+
+/**
  * @param mixed $value
  * @param string $hash
  * @return bool
