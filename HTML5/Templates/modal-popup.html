@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Modal Popup Window</title>
+
+        <!-- Icon source: https://www.favicon.cc/?action=icon&file_id=393493 -->
+        <!--link href="favicon.ico" rel="icon" type="image/x-icon" /-->
+        <link href="data:image/x-icon;base64,AAABAAEAEBAQAAAAAAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAsC8qAP+EAACzh1cAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAACAAAAAAAAACAAAAAAAAEiAAAAADAAAiAAAAAAMzAiAAAAAAAAMzAAAAAAAAAiMzMAAAAAAAADAzAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA" rel="icon" type="image/x-icon" />
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <style>
+            /* Main styles */
+            .modal-popup.hidden {
+                display: none;
+            }
+
+            .modal-popup-backdrop {
+                position: fixed;
+                z-index: 90000;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                background-color: #000;
+                opacity: 0.7;
+            }
+
+            .modal-popup-body {
+                position: fixed;
+                z-index: 100000;
+                background-color: #fff;
+                padding: 0;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 700px;
+                max-width: 100%;
+                height: 55%;
+                overflow-x: hidden;
+                overflow-y: auto;
+            }
+        </style>
+
+        <style>
+            /* Just for demo */
+            html, body {
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            body {
+                background-color: #38424d;
+                margin: 0;
+                font-family: "Muli", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .modal-popup-body {
+                padding: 20px;
+                border-radius: 10px;
+            }
+
+            p {
+                margin: 0 0 1.5em;
+                font-size: 16px;
+                line-height: 1.75em;
+            }
+            blockquote {
+                border: 0 solid #1a1a1a;
+                border-left-width: 4px;
+                color: #686868;
+                font-size: 19px;
+                font-style: italic;
+                line-height: 1.5em;
+                margin: 0 0 1.5em;
+                overflow: hidden;
+                padding: 0 0 0 1.25em;
+                quotes: none;
+            }
+
+            .button {
+                display: inline-block;
+                font-weight: 400;
+                text-align: center;
+                white-space: nowrap;
+                vertical-align: middle;
+                user-select: none;
+                border: 1px solid transparent;
+                padding: .5rem 1rem;
+                font-size: 18px;
+                line-height: 1.5;
+                border-radius: .3rem;
+                color: #fff;
+                background-color: #337ab7;
+                border-color: #2e6da4;
+                cursor: pointer;
+            }
+            .button:hover {
+                color: #fff;
+                background-color: #0069d9;
+                border-color: #0062cc;
+            }
+        </style>
+    </head>
+
+    <body>
+        <button class="button">Show Popup</button>
+
+        <div class="modal-popup hidden">
+            <div class="modal-popup-backdrop"></div>
+            <div class="modal-popup-body">
+                <p>This is an example page from WordPress. It’s different from a blog post because it will stay in one place and will show up in your site navigation (in most themes). Most people start with an About page that introduces them to potential site visitors. It might say something like this:</p>
+                <blockquote>Hi there! I’m a bike messenger by day, aspiring actor by night, and this is my website. I live in Los Angeles, have a great dog named Jack, and I like piña coladas. (And gettin’ caught in the rain.)</blockquote>
+                <p>…or something like this:</p>
+                <blockquote>The XYZ Doohickey Company was founded in 1971, and has been providing quality doohickeys to the public ever since. Located in Gotham City, XYZ employs over 2,000 people and does all kinds of awesome things for the Gotham community.</blockquote>
+                <p>As a new WordPress user, you should go to <a href="https://codex.wordpress.org/404" target="_blank">your dashboard</a> to delete this page and create new pages for your content. Have fun!</p>
+            </div>
+        </div>
+
+        <script>
+            "use strict";
+
+            var demoPopup = document.querySelector('.modal-popup');
+
+            document.querySelector('.button').addEventListener('click', () => toggleModal(demoPopup));
+            document.querySelector('.modal-popup > .modal-popup-backdrop').addEventListener('click', event => toggleModal(event.target.parentNode));
+
+            function toggleModal(element)
+            {
+                let newClass = '';
+
+                if (element.className.indexOf('hidden') == -1) {
+                    newClass = element.className + ' hidden';
+                } else {
+                    newClass = element.className.replace('hidden', '');
+                }
+
+                element.className = newClass.trim();
+            }
+        </script>
+    </body>
+</html>
