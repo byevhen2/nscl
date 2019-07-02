@@ -1,8 +1,10 @@
-# Functions (118)
+# Functions (120)
 
 * `_get()` (_request.php_)
 * `_post()` (_request.php_)
+* `add_query_sign()` (_wordpress.php_)
 * `aimplodef()` (_array.php_)
+* `ajax_url()` (_wordpress.php_)
 * `array_disjunction()` (_array.php_)
 * `array_insert_after()` (_array.php_)
 * `array_length()` (_array.php_)
@@ -256,8 +258,10 @@
 * `validate_relation()`
 * `validate_string()`
 
-## WordPress Functions (16)
+## WordPress Functions (18)
 
+* `add_query_sign()`
+* `ajax_url()`
 * `check_hash()`
 * `check_option()`
 * `check_option_length()`

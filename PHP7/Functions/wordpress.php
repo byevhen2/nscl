@@ -18,6 +18,11 @@ function add_query_sign(string $url, string $queryVar = 's'): string
     return $url;
 }
 
+function ajax_url(): string
+{
+    return admin_url('admin-ajax.php');
+}
+
 /**
  * @param mixed $value
  * @param string $hash
