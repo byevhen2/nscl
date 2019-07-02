@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>~/public_html/</title>
+
+        <!-- Icon source: https://www.favicon.cc/?action=icon&file_id=393493 -->
+        <!--link href="favicon.ico" rel="icon" type="image/x-icon" /-->
+        <link href="data:image/x-icon;base64,AAABAAEAEBAQAAAAAAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAsC8qAP+EAACzh1cAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAACAAAAAAAAACAAAAAAAAEiAAAAADAAAiAAAAAAMzAiAAAAAAAAMzAAAAAAAAAiMzMAAAAAAAADAzAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA" rel="icon" type="image/x-icon" />
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <style>
+            body, input {
+                background-color: black;
+                color: lightgray;
+                font-size: 16px;
+                font-family: monospace;
+            }
+            span, input, pre {
+                padding: 0;
+                margin: 0;
+            }
+            pre {
+                display: inline-block;
+            }
+            input {
+                border: none;
+                box-shadow: none;
+            }
+            input:focus {
+                outline: none;
+            }
+        </style>
+    </head>
+    <body>
+
+        <div id="terminal"></div>
+
+        <script>
+            var terminal = (function () {
+                "use strict";
+
+                var USER      = 'root@root';
+                var ABSPATH   = '~/public_html';
+                var PATH_HTML = '<span>' + USER + ':' + ABSPATH + '$ </span>';
+
+                var wrapper = null;
+                var input   = document.createElement('input');
+
+                var self = null;
+
+                var Terminal = function () {
+                    self = this;
+
+                    input.type = 'text';
+
+                    // Disable spell-checking on HTML textfields for all desktop
+                    // and mobile browsers
+                    input.autocomplete   = 'off';
+                    input.autocorrect    = 'off';
+                    input.autocapitalize = 'off';
+                    input.spellcheck     = false;
+
+                    input.addEventListener('keyup', function (event) {
+                        event.preventDefault();
+
+                        // Number 13 is the "Enter" key on the keyboard
+                        if (event.keyCode == 13) {
+                            self.pushCommand(this.value);
+                        }
+                    });
+
+                    input.addEventListener('blur', function (event) {
+                        if (self.isActive()) {
+                            input.focus();
+                        }
+                    });
+
+                    window.addEventListener('resize', maximizeInput.bind(this));
+                };
+
+                Terminal.prototype = {
+                    isActive: function () {
+                        return (wrapper != null);
+                    },
+
+                    capture: function (blockId) {
+                        this.uncapture();
+
+                        wrapper = document.getElementById(blockId);
+
+                        if (wrapper != null) {
+                            wrapper.insertAdjacentHTML('afterBegin', PATH_HTML);
+                            wrapper.appendChild(input);
+
+                            maximizeInput();
+
+                            input.focus();
+                        }
+                    },
+
+                    uncapture: function () {
+                        if (this.isActive()) {
+                            wrapper.removeChild(input);
+                        }
+
+                        wrapper = null;
+                    },
+
+                    clear: function () {
+                        input.value = '';
+                    },
+
+                    pushInput: function (line) {
+                        if (this.isActive()) {
+                            pushMessage(line, 'pre');
+                        }
+                        return this;
+                    },
+
+                    pushOutput: function (line) {
+                        if (this.isActive()) {
+                            pushMessage(line);
+                        }
+                        return this;
+                    },
+
+                    pushPath: function () {
+                        if (this.isActive()) {
+                            input.insertAdjacentHTML('beforeBegin', PATH_HTML);
+                        }
+                        return this;
+                    },
+
+                    pushCommand: function (line) {
+                        if (!this.isActive()) {
+                            return;
+                        }
+
+                        var command = line.trim();
+                        var commandName = self.getCommandName(command);
+
+                        this.clear();
+
+                        this.pushInput(line);
+
+                        if (commandName != '') {
+                            this.pushOutput(commandName + ': command not found');
+                        } else if (command != '') {
+                            this.pushOutput('Unknown command: ' + command);
+                        }
+
+                        this.pushPath();
+
+                        return this;
+                    },
+
+                    getCommandName: function (line) {
+                        var match = line.match(/[\w@#%\^\*\-\+=\.]+/);
+                        return (match != null && match.length > 0) ? match[0] : '';
+                    }
+                };
+
+                function pushMessage(text, tag)
+                {
+                    tag  = tag || 'span';
+                    text = text.replace('<', '&lt;').replace('>', '&gt;');
+                    input.insertAdjacentHTML('beforeBegin', '<' + tag + '>' + text + '</' + tag + '><br />');
+                }
+
+                function maximizeInput()
+                {
+                    var nodesCount    = wrapper.children.length;
+                    var waitHtmlWidth = Math.ceil(wrapper.children[nodesCount - 2].offsetWidth);
+                    var inputWidth    = Math.floor(wrapper.offsetWidth - waitHtmlWidth);
+                    input.style.width = (inputWidth > 150) ? inputWidth + 'px' : '100%';
+                }
+
+                return new Terminal();
+            })();
+
+            terminal.capture('terminal');
+            terminal.pushCommand('wp-cli run core');
+        </script>
+
+    </body>
+</html>

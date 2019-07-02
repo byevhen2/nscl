@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Progress Bar</title>
+
+        <!-- Icon source: https://www.favicon.cc/?action=icon&file_id=393493 -->
+        <!--link href="favicon.ico" rel="icon" type="image/x-icon" /-->
+        <link href="data:image/x-icon;base64,AAABAAEAEBAQAAAAAAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAsC8qAP+EAACzh1cAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAACAAAAAAAAACAAAAAAAAEiAAAAADAAAiAAAAAAMzAiAAAAAAAAMzAAAAAAAAAiMzMAAAAAAAADAzAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA" rel="icon" type="image/x-icon" />
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <style>
+            /* Main styles */
+            .progress-bar {
+                position: relative;
+                height: 28px;
+                background-color: white;
+                border: 1px solid #4297d7;
+                border-radius: 5px;
+                overflow: hidden;
+            }
+
+            .progress-bar::before {
+                content: "";
+                display: block;
+                width: 0;
+                height: 100%;
+                background: repeating-linear-gradient(45deg, #6ea6d1, #6ea6d1 10px, #88b6d9 10px, #88b6d9 20px);
+                transition: width .3s ease;
+            }
+
+            .progress-bar.waiting::before {
+                width: 100% !important;
+                opacity: 0.65;
+                animation: animate-progress-bar 1.5s linear infinite;
+            }
+
+            .progress-bar::after {
+                content: "Preparing Data...";
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                color: #222;
+                text-shadow: 1px 0px 1px rgba(255, 255, 255, 0.5);
+                font-size: 14px;
+                font-weight: bold;
+            }
+
+            @keyframes animate-progress-bar {
+                0% {
+                    background-position: 0 0;
+                }
+                100% {
+                    background-position: 28px 0;
+                }
+            }
+        </style>
+
+        <style>
+            /* Changes */
+            .fourty-five::before {
+                width: 45%;
+            }
+
+            .fourty-five::after {
+                content: "45%";
+            }
+        </style>
+
+        <style>
+            /* Just for demo */
+            html, body {
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            body {
+                background-color: #38424d;
+                margin: 0;
+                font-family: "Muli", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            #wrap {
+                width: 90%;
+            }
+            .progress-bar {
+                margin: 20px 0;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="wrap">
+            <div class="progress-bar waiting"></div>
+            <div class="progress-bar fourty-five"></div>
+        </div>
+    </body>
+</html>

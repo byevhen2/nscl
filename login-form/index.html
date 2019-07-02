@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Log In</title>
+
+        <!-- Icon source: https://www.favicon.cc/?action=icon&file_id=393493 -->
+        <!--link href="favicon.ico" rel="icon" type="image/x-icon" /-->
+        <link href="data:image/x-icon;base64,AAABAAEAEBAQAAAAAAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAsC8qAP+EAACzh1cAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAACAAAAAAAAACAAAAAAAAEiAAAAADAAAiAAAAAAMzAiAAAAAAAAMzAAAAAAAAAiMzMAAAAAAAADAzAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA" rel="icon" type="image/x-icon" />
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <style>
+            html, body {
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            body {
+                background-color: #38424d;
+                margin: 0;
+                font-family: "Muli", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+            }
+        </style>
+    </head>
+    <body>
+
+        <div id="login">
+            <form id="login-form" action="" method="GET">
+                <input type="hidden" name="login" value="1" />
+                <label>Username <input type="text" name="username" id="login-form-username" value="" /></label>
+                <label>Password <input type="password" name="password" id="login-form-password" value="" /></label>
+                <label><input type="checkbox" name="remember" id="login-form-remember" /> Remember Me</label>
+                <p><input type="submit" class="button primary large" value="Log In" /></p>
+            </form>
+
+            <script>
+                (function () {
+                    var predefinedUsers = ['admin', 'root'];
+
+                    function empty(str) { return (str == ''); }
+                    function in_array(needle, haystack) { return (haystack.indexOf(needle) >= 0); }
+
+                    /** @see https://developers.google.com/web/updates/2016/01/urlsearchparams */
+                    var data     = new URLSearchParams(window.location.search);
+                    var login    = data.has('login');
+                    var username = data.get('username') || '';
+                    var password = data.get('password') || '';
+                    var remember = data.has('remember');
+
+                    // Only one of the next states can be TRUE
+                    var formEmpty       = empty(username) && empty(password);
+                    var usernameEmpty   = empty(username) && !empty(password);
+                    var passwordEmpty   = !empty(username) && empty(password);
+                    var invalidUsername = !empty(username) && !empty(password) && !in_array(username, predefinedUsers);
+                    var invalidPassword = !empty(username) && !empty(password) && in_array(username, predefinedUsers);
+
+                    // Set up all values
+                    if (login) {
+                        document.getElementById('login-form-username').value = username;
+                        if (remember) {
+                            document.getElementById('login-form-remember').checked = true;
+                        }
+                    }
+
+                    // Show message
+                    if (login) {
+                        var message = '';
+
+                        if (formEmpty) {
+                            message = '<p class="message warning">Sorry, but we cannot identify you in the system. Please log in.</p>';
+                        } else if (usernameEmpty) {
+                            message = '<p class="message error">The username field is empty.</p>';
+                        } else if (passwordEmpty) {
+                            message = '<p class="message error">The password field is empty.</p>';
+                        } else if (invalidUsername) {
+                            message = '<p class="message error">Invalid username.</p>';
+                        } else if (invalidPassword) {
+                            message = '<p class="message error">The password you entered for the username <strong>' + username + '</strong> is incorrect.</p>';
+                        }
+
+                        /** @see https://learn.javascript.ru/multi-insert#insertadjacent */
+                        document.getElementById('login').insertAdjacentHTML('afterBegin', message);
+                    }
+
+                    // Focus on the right field
+                    var focusOn = (passwordEmpty || invalidPassword) ? 'login-form-password' : 'login-form-username';
+                    var element = document.getElementById(focusOn);
+                    element.focus();
+                    element.select(); // Highlight the text
+                })()
+            </script>
+        </div><!-- End of #login -->
+
+        <style>
+            body {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            #login {
+                background-color: #fff;
+                width: 284px;
+                padding: 18px;
+                font-size: 17px;
+                border-radius: 6px;
+            }
+            #login .message + form {
+                margin: 18px 0 0;
+            }
+            #login label {
+                cursor: pointer;
+                display: inline-block;
+                width: 100%;
+                margin: 0 0 16px;
+            }
+            #login input {
+                font-size: 18px;
+            }
+            #login input[type="text"],
+            #login input[type="password"] {
+                width: 100%;
+                box-sizing: border-box;
+                padding: 2px;
+                margin: 0;
+                font-size: 21px;
+            }
+            #login form p {
+                margin: 0;
+                text-align: center;
+            }
+            .message {
+                border-top: none;
+                border-radius: 6px;
+                padding: 15px;
+                margin: 0;
+                background-color: #fff;
+                color: #555555;
+                position: relative;
+            }
+            .message.notice {
+                border-top: 30px solid #6ab0de;
+                background-color: #e7f2fa;
+            }
+            .message.warning {
+                border-top: 30px solid #f0b37e;
+                background-color: #fff2db;
+            }
+            .message.error {
+                border-top: 30px solid #d9534f;
+                background-color: #fae2e2;
+            }
+            .message.notice:before,
+            .message.warning:before,
+            .message.error:before {
+                position: absolute;
+                top: -30px;
+                line-height: 30px;
+                color: #fff;
+                font-weight: bold;
+            }
+            .message.notice:before {
+                content: "Notice";
+            }
+            .message.warning:before {
+                content: "Warning";
+            }
+            .message.error:before {
+                content: "Error";
+            }
+            .button {
+                display: inline-block;
+                font-weight: 400;
+                text-align: center;
+                white-space: nowrap;
+                vertical-align: middle;
+                user-select: none;
+                border: 1px solid transparent;
+                padding: 0.375rem 0.75rem;
+                font-size: 1rem;
+                line-height: 1.5;
+                border-radius: 0.25rem;
+                cursor: pointer;
+            }
+            .button.primary {
+                color: #fff;
+                background-color: #337ab7;
+                border-color: #2e6da4;
+            }
+            .button.primary:hover {
+                color: #fff;
+                background-color: #0069d9;
+                border-color: #0062cc;
+            }
+            .button.large {
+                padding: .5rem 1rem;
+                font-size: 1.25rem;
+                line-height: 1.5;
+                border-radius: .3rem;
+            }
+        </style>
+
+    </body>
+</html>
