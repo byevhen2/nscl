@@ -1,4 +1,4 @@
-# Functions (120)
+# Functions (121)
 
 * `_get()` (_request.php_)
 * `_post()` (_request.php_)
@@ -118,6 +118,7 @@
 * `validate_relation()` (_validate.php_)
 * `validate_string()` (_validate.php_)
 * `values()` (_array.php_)
+* `verify_nonce()` (_wordpress.php_)
 * `wp_empty()` (_wordpress.php_)
 * `wrap()` (_format.php; see also array_wrap()_)
 
@@ -258,7 +259,7 @@
 * `validate_relation()`
 * `validate_string()`
 
-## WordPress Functions (18)
+## WordPress Functions (19)
 
 * `add_query_sign()`
 * `ajax_url()`
@@ -277,6 +278,7 @@
 * `is_wp_version()`
 * `mime_type()`
 * `readable_post_statuses()`
+* `verify_nonce()`
 * `wp_empty()`
 
 ## WPML Functions (22)

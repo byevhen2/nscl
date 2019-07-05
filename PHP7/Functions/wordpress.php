@@ -253,6 +253,17 @@ function readable_post_statuses(): array
     }
 }
 
+function verify_nonce(string $action, string $nonceName = 'nonce'): bool
+{
+    if (!isset($_REQUEST[$nonceName])) {
+        return false;
+    }
+
+    $nonce = $_REQUEST[$nonceName];
+
+    return wp_verify_nonce($nonce, $action);
+}
+
 function wp_empty($value): bool
 {
     return (empty($value) || is_wp_error($value));
