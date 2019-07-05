@@ -9,7 +9,8 @@ declare(strict_types = 1);
  */
 function _get(string $property, $default = '')
 {
-    return (isset($_GET[$property])) ? $_GET[$property] : $default;
+    // Will return $default if the value is Null
+    return $_GET[$property] ?? $default;
 }
 
 /**
@@ -19,5 +20,17 @@ function _get(string $property, $default = '')
  */
 function _post(string $property, $default = '')
 {
-    return (isset($_POST[$property])) ? $_POST[$property] : $default;
+    // Will return $default if the value is Null
+    return $_POST[$property] ?? $default;
+}
+
+/**
+ * @param string $property
+ * @param mixed $default
+ * @return mixed
+ */
+function _request(string $property, $default = '')
+{
+    // Will return $default if the value is Null
+    return $_REQUEST[$property] ?? $default;
 }

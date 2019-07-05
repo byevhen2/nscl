@@ -1,7 +1,8 @@
-# Functions (121)
+# Functions (122)
 
 * `_get()` (_request.php_)
 * `_post()` (_request.php_)
+* `_request()` (_request.php_)
 * `add_query_sign()` (_wordpress.php_)
 * `aimplodef()` (_array.php_)
 * `ajax_url()` (_wordpress.php_)
@@ -211,10 +212,11 @@
 
 * `render_output()`
 
-## Request Functions (2)
+## Request Functions (3)
 
 * `_get()`
 * `_post()`
+* `_request()`
 
 ## Script Functions (4)
 
