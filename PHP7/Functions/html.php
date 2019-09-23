@@ -11,9 +11,13 @@ declare(strict_types = 1);
  */
 function remove_tag(string $html, string $tag): string
 {
+    $tag = preg_quote($tag);
+
     // Pattern example: "/<title[^>]*>|<\/title>/i";
     $pattern = '/<' . $tag . '[^>]*>|<\/' . $tag . '>/i';
-    return preg_replace($pattern, '', $html);
+    $replacement = preg_replace($pattern, '', $html);
+
+    return !is_null($replacement) ? $replacement : $html;
 }
 
 /**
@@ -25,7 +29,11 @@ function remove_tag(string $html, string $tag): string
  */
 function remove_tag_content(string $html, string $tag): string
 {
+    $tag = preg_quote($tag);
+
     // Pattern example: "/<(title)[^>]*>.*?<\/\1>/si"
     $pattern = '/<(' . $tag . ')[^>]*>.*?<\/\1>/si';
-    return preg_replace($pattern, '', $html);
+    $replacement = preg_replace($pattern, '', $html);
+
+    return !is_null($replacement) ? $replacement : $html;
 }
