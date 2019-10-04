@@ -124,6 +124,21 @@ function as_array($value)
 }
 
 /**
+ * @param string $string
+ * @return array
+ */
+function explode_by_spaces(string $string): array
+{
+    $string = trim($string);
+
+    if ($string !== '') {
+        return preg_split('/\s+/', $string);
+    } else {
+        return [];
+    }
+}
+
+/**
  * @param array $array
  * @return mixed|false The value of the first key or FALSE if the array is empty.
  *

@@ -1,4 +1,4 @@
-# Functions (122)
+# Functions (123)
 
 * `_get()` (_request.php_)
 * `_post()` (_request.php_)
@@ -23,6 +23,7 @@
 * `decimals_count()` (_format.php_)
 * `dir_files()` (_dir.php_)
 * `escape_json_unicodes()` (_json.php_)
+* `explode_by_spaces()` (_array.php_)
 * `file_dir()` (_file.php_)
 * `file_extension()` (_file.php_)
 * `file_name()` (_file.php_)
@@ -123,7 +124,7 @@
 * `wp_empty()` (_wordpress.php_)
 * `wrap()` (_format.php; see also array_wrap()_)
 
-## Array Functions (17)
+## Array Functions (18)
 
 * `aimplodef()`
 * `array_disjunction()`
@@ -132,6 +133,7 @@
 * `array_remove()`
 * `array_wrap()`
 * `as_array()`
+* `explode_by_spaces()`
 * `first_key()`
 * `implode_and()`
 * `implodef()`
