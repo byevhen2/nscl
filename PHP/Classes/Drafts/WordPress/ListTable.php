@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-namespace NSCL\WordPress\Drafts;
+namespace NSCL\WordPress;
 
 /**
  * <strong>The class is unfinished.</strong>

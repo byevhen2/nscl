@@ -5,8 +5,6 @@
  */
 function random(min, max)
 {
-    "use strict";
-
     if (min == undefined) {
         min = 0;
     }
@@ -42,8 +40,6 @@ function random_fill(count, min, max)
 
 function random_in(/*...*/)
 {
-    "use strict";
-
     let selectedIndex = random(1, arguments.length);
     return arguments[selectedIndex];
 }

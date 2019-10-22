@@ -1,6 +1,5 @@
 function in_range(value, min, max)
 {
-    "use strict";
     return value >= min && value <= max;
 }
 

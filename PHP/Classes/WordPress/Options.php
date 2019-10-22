@@ -6,8 +6,7 @@ namespace NSCL\WordPress;
 
 class Options
 {
-    /** @var string */
-    protected $prefix = '';
+    public $prefix = '';
 
     public function __construct(string $prefix = '')
     {
@@ -35,11 +34,11 @@ class Options
     }
 
     /**
-     * @global \wpdb $wpdb
-     *
      * @param string $option Option name without prefix.
      * @param mixed $default Optional. <b>false</b> by default.
      * @return mixed Option value or default value.
+     *
+     * @global \wpdb $wpdb
      *
      * @see get_uncached_option()
      */
@@ -68,10 +67,10 @@ class Options
     /**
      * @param string $option Option name without prefix.
      * @param mixed $value Any value.
-     * @param string|bool|null $autoload "yes"/true/null (null also means "yes") or "no"/false.
-     *                                   <i>Please notice:</i> default value of the $autoload
-     *                                   here is <b>"no"</b> while the same parameter in function
-     *                                   update_option() has value <b>null</b> (equal to "yes").
+     * @param string|bool|null $autoload "yes"/true/null (null also means "yes")
+     *     or "no"/false. <i>Please note:</i> default value of the $autoload
+     *     here is <b>"no"</b> while the same parameter in function
+     *     update_option() has value <b>null</b> (equal to "yes").
      * @return bool <b>true</b> if succeed, <b>false</b> - otherwise.
      */
     public function update(string $option, $value, $autoload = 'no')
