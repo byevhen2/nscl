@@ -1,5 +1,4 @@
 # Functions (123)
-
 * `_get()` (_request.php_)
 * `_post()` (_request.php_)
 * `_request()` (_request.php_)
@@ -125,7 +124,6 @@
 * `wrap()` (_format.php; see also array_wrap()_)
 
 ## Array Functions (18)
-
 * `aimplodef()`
 * `array_disjunction()`
 * `array_insert_after()`
@@ -146,7 +144,6 @@
 * `values()`
 
 ## Color Functions (5)
-
 * `darker_color()`
 * `hex_to_rgb()`
 * `light_or_dark_color()`
@@ -154,14 +151,12 @@
 * `to_long_hex_color()`
 
 ## Date Functions (4)
-
 * `calc_nights()`
 * `current_date_with_time()`
 * `next_timestamp_with_time()`
 * `parse_time()`
 
 ## Directory Functions (6)
-
 * `dir_files()`
 * `lock_dir()`
 * `make_dir()`
@@ -170,7 +165,6 @@
 * `scan_dir()`
 
 ## File Functions (5)
-
 * `file_dir()`
 * `file_extension()`
 * `file_name()`
@@ -178,7 +172,6 @@
 * `unique_filename()`
 
 ## Format Functions (10)
-
 * `decimals_count()`
 * `format_size()`
 * `format_size_si()`
@@ -191,68 +184,55 @@
 * `wrap()`
 
 ## HTML Functions (2)
-
 * `remove_tag()`
 * `remove_tag_content()`
 
 ## JSON Functions (1)
-
 * `escape_json_unicodes()`
 
 ## Load Functions (1)
-
 * `nscl_load()`
 
 ## Regular Expression Functions (4)
-
 * `regex_combine()`
 * `regex_match()`
 * `regex_match_all()`
 * `regex_test()`
 
 ## Render Functions (1)
-
 * `render_output()`
 
 ## Request Functions (3)
-
 * `_get()`
 * `_post()`
 * `_request()`
 
 ## Script Functions (4)
-
 * `get_args()`
 * `php_executable()`
 * `run()`
 * `run_in_background()`
 
 ## Standard I/O Functions (2)
-
 * `stderr()`
 * `stdout()`
 
 ## String Functions (4)
-
 * `str_ends_with()`
 * `str_starts_with()`
 * `str_to_bool()`
 * `str_radd()`
 
 ## Type Functions (1)
-
 * `typeof()`
 
 ## URL Functions (1)
-
 * `get_current_url()`
 
 ## UUID Functions (1)
-
 * `uuid_v4()`
 
 ## Validation Functions (9)
-
 * `is_valid_url()`
 * `validate_bool()`
 * `validate_bool_or_string()`
@@ -264,7 +244,6 @@
 * `validate_string()`
 
 ## WordPress Functions (19)
-
 * `add_query_sign()`
 * `ajax_url()`
 * `check_hash()`
@@ -286,7 +265,6 @@
 * `wp_empty()`
 
 ## WPML Functions (22)
-
 * `get_current_id()`
 * `get_current_language()`
 * `get_current_user_language()`
