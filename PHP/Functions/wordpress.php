@@ -204,6 +204,21 @@ function get_uncached_option(string $option, $default = false)
     }
 }
 
+/**
+ * @return string "Region/City" or "UTC+2".
+ */
+function get_wp_timezone(): string
+{
+    $timezone = get_option('timezone_string', '');
+
+    if (empty($timezone)) {
+        $gmtOffset = (float)get_option('gmt_offset', 0);
+        $timezone  = gmt2utc($gmtOffset);
+    }
+
+    return $timezone;
+}
+
 function is_active_plugin(string $plugin): bool
 {
     if (!function_exists('is_plugin_active')) {

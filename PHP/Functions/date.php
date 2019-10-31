@@ -41,6 +41,38 @@ function current_date_with_time(string $time): DateTime
 }
 
 /**
+ * @param float $gmt
+ * @param bool $addZeroOffset Optional.
+ * @return string "UTC", "UTC-0:30", "UTC+2" etc.
+ */
+function gmt2utc(float $gmt, bool $addZeroOffset = true): string
+{
+    if ($gmt == 0) {
+        return $addZeroOffset ? 'UTC+0' : 'UTC';
+    }
+
+    $hours = abs((int)$gmt);
+
+    $minutes = abs($gmt) - $hours;
+    $minutes = round($minutes * 4) / 4; // Limit variants to 0, 0.25, 0.5, 0.75 or 1
+    $minutes = (int)($minutes * 60); // Only 0, 15, 30, 45 or 60 are possible
+
+    if ($minutes == 60) {
+        $hours++;
+        $minutes = 0;
+    }
+
+    $utc = $gmt >= 0 ? 'UTC+' : 'UTC-';
+    $utc .= $hours;
+
+    if ($minutes > 0) {
+        $utc .= ':' . $minutes;
+    }
+
+    return $utc;
+}
+
+/**
  * @param string $time Time in 24-hour format.
  * @return int Next timestamp with a specified time.
  */

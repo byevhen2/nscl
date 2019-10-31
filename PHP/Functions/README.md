@@ -1,4 +1,4 @@
-# Functions (123)
+# Functions (125)
 * `_get()` (_request.php_)
 * `_post()` (_request.php_)
 * `_request()` (_request.php_)
@@ -44,6 +44,8 @@
 * `get_language_code_from_locale()` (_wpml.php_)
 * `get_uncached_option()` (_wordpress.php_)
 * `get_wp_language()` (_wpml.php_)
+* `get_wp_timezone()` (_wordpress.php_)
+* `gmt2utc()` (_date.php_)
 * `hex_to_rgb()` (_color.php_)
 * `implode_and()` (_array.php_)
 * `implodef()` (_array.php_)
@@ -150,9 +152,10 @@
 * `lighter_color()`
 * `to_long_hex_color()`
 
-## Date Functions (4)
+## Date Functions (5)
 * `calc_nights()`
 * `current_date_with_time()`
+* `gmt2utc()`
 * `next_timestamp_with_time()`
 * `parse_time()`
 
@@ -243,7 +246,7 @@
 * `validate_relation()`
 * `validate_string()`
 
-## WordPress Functions (19)
+## WordPress Functions (20)
 * `add_query_sign()`
 * `ajax_url()`
 * `check_hash()`
@@ -255,6 +258,7 @@
 * `generate_text()`
 * `get_current_frontend_url()`
 * `get_uncached_option()`
+* `get_wp_timezone()`
 * `is_active_plugin()`
 * `is_edit_post()`
 * `is_edit_post_type()`
