@@ -62,7 +62,7 @@ function gmt2utc(float $gmt, bool $addZeroOffset = true): string
         $minutes = 0;
     }
 
-    $utc = $gmt >= 0 ? 'UTC+' : 'UTC-';
+    $utc = $gmt >= 0 ? 'UTC+' : 'UTC-'; // Test case: $gmt = -0.5
     $utc .= $hours;
 
     if ($minutes > 0) {
