@@ -1,4 +1,4 @@
-# Functions (125)
+# Functions (126)
 * `_get()` (_request.php_)
 * `_post()` (_request.php_)
 * `_request()` (_request.php_)
@@ -73,6 +73,7 @@
 * `nscl_load()` (_load.php_)
 * `parse_time()` (_date.php_)
 * `php_executable()` (_script.php_)
+* `posint()` (_format.php_)
 * `readable_post_statuses()` (_wordpress.php_)
 * `real_path()` (_dir.php_)
 * `regex_combine()` (_regex.php_)
@@ -174,10 +175,11 @@
 * `full_file_name()`
 * `unique_filename()`
 
-## Format Functions (10)
+## Format Functions (11)
 * `decimals_count()`
 * `format_size()`
 * `format_size_si()`
+* `posint()`
 * `remove_prefixes()`
 * `slash()`
 * `slash_left()`

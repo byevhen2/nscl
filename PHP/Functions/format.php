@@ -59,6 +59,19 @@ function format_size_si(int $size, string $unit = null): string
     return $sizeString;
 }
 
+/**
+ * @param int|string $value
+ * @return int The number in range [0; oo)
+ */
+function posint($value): int
+{
+    if (is_string($value)) {
+        $value = intval($value);
+    }
+
+    return $value >= 0 ? $value : 0;
+}
+
 function remove_prefixes(array $strings, string $prefix): array
 {
     return array_map(function (string $string) use ($prefix) {
