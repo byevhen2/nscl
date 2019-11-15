@@ -65,11 +65,7 @@ function format_size_si(int $size, string $unit = null): string
  */
 function posint($value): int
 {
-    if (is_string($value)) {
-        $value = intval($value);
-    }
-
-    return $value >= 0 ? $value : 0;
+    return max(0, intval($value));
 }
 
 function remove_prefixes(array $strings, string $prefix): array
