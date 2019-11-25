@@ -1,4 +1,4 @@
-# Functions (127)
+# Functions (128)
 * `_get()` (_request.php_)
 * `_post()` (_request.php_)
 * `_request()` (_request.php_)
@@ -39,6 +39,7 @@
 * `get_current_user_locale()` (_wpml.php_)
 * `get_default_id()` (_wpml.php_)
 * `get_default_language()` (_wpml.php_)
+* `get_editing_post_id()` (_wordpress.php_)
 * `get_language_code_from_locale()` (_wpml.php_)
 * `get_uncached_option()` (_wordpress.php_)
 * `get_wp_language()` (_wpml.php_)
@@ -249,7 +250,7 @@
 * `validate_relation()`
 * `validate_string()`
 
-## WordPress Functions (21)
+## WordPress Functions (22)
 * `add_query_sign()`
 * `ajax_url()`
 * `check_hash()`
@@ -258,6 +259,7 @@
 * `create_hash()`
 * `create_table()`
 * `get_current_frontend_url()`
+* `get_editing_post_id()`
 * `get_uncached_option()`
 * `get_wp_timezone()`
 * `is_active_plugin()`
