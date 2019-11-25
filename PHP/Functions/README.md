@@ -1,4 +1,4 @@
-# Functions (126)
+# Functions (124)
 * `_get()` (_request.php_)
 * `_post()` (_request.php_)
 * `_request()` (_request.php_)
@@ -30,8 +30,6 @@
 * `format_size()` (_format.php_)
 * `format_size_si()` (_format.php_)
 * `full_file_name()` (_file.php_)
-* `generate_slug()` (_wordpress.php_)
-* `generate_text()` (_wordpress.php_)
 * `get_args()` (_script.php_)
 * `get_current_frontend_url()` (_wordpress.php_)
 * `get_current_id()` (_wpml.php_)
@@ -248,7 +246,7 @@
 * `validate_relation()`
 * `validate_string()`
 
-## WordPress Functions (20)
+## WordPress Functions (18)
 * `add_query_sign()`
 * `ajax_url()`
 * `check_hash()`
@@ -256,8 +254,6 @@
 * `check_option_length()`
 * `create_hash()`
 * `create_table()`
-* `generate_slug()`
-* `generate_text()`
 * `get_current_frontend_url()`
 * `get_uncached_option()`
 * `get_wp_timezone()`

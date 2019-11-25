@@ -135,35 +135,6 @@ function create_table(string $table, array $fields, $primaryKey = null, array $c
     return $wpdb->query($sql);
 }
 
-/**
- * @param string $title
- * @return string
- *
- * @see generate_text()
- */
-function generate_slug(string $title): string
-{
-    // Decode any %## encoding in the title
-    $slug = urldecode($title);
-    // Generate slug
-    $slug = sanitize_title($slug);
-    // Decode any %## encoding again after function sanitize_title(), to
-    // translate something like "%d0%be%d0%b4%d0%b8%d0%bd" into "один"
-    $slug = urldecode($slug);
-    return $slug;
-}
-
-/**
- * @param string $slug
- * @return string
- *
- * @see generate_slug()
- */
-function generate_text(string $slug): string
-{
-    return ucfirst(str_replace(['-', '_'], ' ', $slug));
-}
-
 function get_current_frontend_url(bool $stripQueryArgs = false): string
 {
     $url = get_permalink();
