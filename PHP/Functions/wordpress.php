@@ -220,6 +220,56 @@ function is_wp_version(string $atLeast, bool $clean = false): bool
     return version_compare($version, $atLeast, '>=');
 }
 
+/**
+ * @param string $string Any string to generate slug of.
+ * @param string $fallbackSlug A slug to use if a $string or its slug is empty.
+ * @return string A string with lowercased words and dashes "-" (without
+ *     underscores "_").
+ */
+function make_dash_slug(string $string, string $fallbackSlug = ''): string
+{
+    $slug = make_slug($string, '');
+
+    if ($slug !== '') {
+        // Replace all underscores. Also fix "a-_b" to "a-b"
+        $slug = preg_replace('/[\-_]+/', '-', $slug);
+        $slug = trim($slug, '-');
+    }
+
+    return $slug ?: $fallbackSlug;
+}
+
+/**
+ * Alias of sanitize_title().
+ *
+ * @param string $string Any string to generate slug of.
+ * @param string $fallbackSlug A slug to use if a $string or its slug is empty.
+ * @return string A string with lowercased words, underscores "_" and dashes "-".
+ */
+function make_slug(string $string, string $fallbackSlug = ''): string
+{
+    // Decode any %## encoding in the title
+    $slug = urldecode($string);
+
+    // Generate slug
+    $slug = sanitize_title($slug, $fallbackSlug);
+
+    // Decode any %## encoding again after function sanitize_title(), to
+    // translate something like "%d0%be%d0%b4%d0%b8%d0%bd" into "один"
+    $slug = urldecode($slug);
+
+    return $slug;
+}
+
+/**
+ * @param string $slug
+ * @return string
+ */
+function make_title(string $slug): string
+{
+    return ucfirst(str_replace(['-', '_'], ' ', $slug));
+}
+
 function mime_type(string $path): string
 {
     $mime = wp_check_filetype(basename($path));

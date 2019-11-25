@@ -1,4 +1,4 @@
-# Functions (124)
+# Functions (127)
 * `_get()` (_request.php_)
 * `_post()` (_request.php_)
 * `_request()` (_request.php_)
@@ -65,7 +65,10 @@
 * `light_or_dark_color()` (_color.php_)
 * `lighter_color()` (_color.php_)
 * `lock_dir()` (_dir.php_)
+* `make_dash_slug()` (_wordpress.php_)
 * `make_dir()` (_dir.php_)
+* `make_slug()` (_wordpress.php_)
+* `make_title()` (_wordpress.php_)
 * `mime_type()` (_wordpress.php_)
 * `next_timestamp_with_time()` (_date.php_)
 * `nscl_load()` (_load.php_)
@@ -246,7 +249,7 @@
 * `validate_relation()`
 * `validate_string()`
 
-## WordPress Functions (18)
+## WordPress Functions (21)
 * `add_query_sign()`
 * `ajax_url()`
 * `check_hash()`
@@ -261,6 +264,9 @@
 * `is_edit_post()`
 * `is_edit_post_type()`
 * `is_wp_version()`
+* `make_dash_slug()`
+* `make_slug()`
+* `make_title()`
 * `mime_type()`
 * `readable_post_statuses()`
 * `verify_nonce()`
