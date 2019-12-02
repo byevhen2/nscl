@@ -2,22 +2,26 @@
 
 namespace NSCL;
 
-spl_autoload_register(function ($className) {
-    // "Namespace\Package\ClassX"
-    $className = ltrim($className, '\\');
+if (!defined('ABSPATH')) {
+    exit;
+}
 
-    if (strpos($className, __NAMESPACE__) !== 0) {
-        return;
+spl_autoload_register(function ($class) {
+    // "Namespace\Package\ClassX"
+    $class = ltrim($class, '\\');
+
+    if (strpos($class, __NAMESPACE__) !== 0) {
+        return; // Not ours
     }
 
     // "classes\Package\ClassX"
-    $pluginFile = str_replace(__NAMESPACE__, 'classes', $className);
+    $file = str_replace(__NAMESPACE__, 'classes', $class);
     // "classes/Package/ClassX"
-    $pluginFile = str_replace('\\', DIRECTORY_SEPARATOR, $pluginFile);
+    $file = str_replace('\\', DIRECTORY_SEPARATOR, $file);
     // "classes/Package/ClassX.php"
-    $pluginFile .= '.php';
-    // ".../project-dir/classes/Package/ClassX.php"
-    $pluginFile = __DIR__ . DIRECTORY_SEPARATOR . $pluginFile;
+    $file .= '.php';
+    // ".../classes/Package/ClassX.php"
+    $file = __DIR__ . DIRECTORY_SEPARATOR . $file;
 
-    require $pluginFile;
+    require $file;
 });
