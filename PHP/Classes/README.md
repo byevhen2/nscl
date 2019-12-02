@@ -1,6 +1,10 @@
-# Classes (16)
+# Classes (18)
 ## WordPress/Async
 _Moved to it's own repository. See repository "wp-background-process"._
+
+## WordPress/Cron (2)
+* NSCL\WordPress\Cron\\`CronInterval`
+* NSCL\WordPress\Cron\\`CronTask`
 
 ## WordPress/Settings (11)
 * NSCL\WordPress\Settings\Fields\\`CheckboxField`
