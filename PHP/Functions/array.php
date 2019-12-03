@@ -83,6 +83,32 @@ function array_length($var): int
 }
 
 /**
+ * Move an array element to a new index. Moves the element before the existing
+ * item $array[$to].
+ *
+ * Use on numeric arrays only.
+ *
+ * @param array $array
+ * @param int $from
+ * @param int $to
+ */
+function array_move(array &$array, int $from, int $to)
+{
+    if ($from == $to) {
+        return;
+    }
+
+    $item = array_splice($array, $from, 1);
+
+    // The array become shorter and all indexed after $from decreased
+    if ($from < $to) {
+        $to--;
+    }
+
+    array_splice($array, $to, 0, $item);
+}
+
+/**
  * Remove value from the array.
  *
  * @param array $array
