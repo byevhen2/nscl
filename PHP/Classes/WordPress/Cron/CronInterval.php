@@ -10,7 +10,12 @@ class CronInterval
     public $interval = 12 * HOUR_IN_SECONDS; // "twicedaily"
     public $display  = '';
 
-    public function __construct(string $id, string $interval, string $display = '')
+    /**
+     * @param string $id
+     * @param int $interval The amount of seconds between each call.
+     * @param string $display Optional.
+     */
+    public function __construct(string $id, int $interval, string $display = '')
     {
         $this->id       = $id;
         $this->interval = $interval;
@@ -19,6 +24,12 @@ class CronInterval
         add_filter('cron_schedules', [$this, 'registerInterval']);
     }
 
+    /**
+     * Callback for filter "cron_schedules".
+     *
+     * @param array $schedules
+     * @return array
+     */
     public function registerInterval(array $schedules): array
     {
         $schedules[$this->id] = [

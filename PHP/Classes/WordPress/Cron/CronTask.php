@@ -17,6 +17,11 @@ class CronTask
     public $callback = null;
     public $arguments = [];
 
+    /**
+     * @param string $name
+     * @param string $interval Optional. "twicedaily" by default.
+     * @param int $priority Optional. 10 by default.
+     */
     public function __construct(string $name, string $interval = 'twicedaily', int $priority = 10)
     {
         $this->name     = $name;
@@ -27,6 +32,10 @@ class CronTask
         add_action($this->action, [$this, 'run'], $this->priority);
     }
 
+    /**
+     * @param callable $callback
+     * @param array $arguments Optional.
+     */
     public function setCallback(callable $callback, array $arguments = [])
     {
         if (is_null($this->callback)) {
@@ -96,6 +105,14 @@ class CronTask
     public function isScheduled(): bool
     {
         return wp_next_scheduled($this->action) !== false;
+    }
+
+    /**
+     * @return int|false
+     */
+    public function scheduledAt()
+    {
+        return wp_next_scheduled($this->action);
     }
 
     /**
