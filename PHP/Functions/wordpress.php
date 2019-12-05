@@ -303,6 +303,14 @@ function readable_post_statuses(): array
     }
 }
 
+/**
+ * @param \DateTime $date
+ */
+function set_wp_timezone(\DateTime $date)
+{
+    $date->setTimezone(wp_timezone());
+}
+
 function verify_nonce(string $action, string $nonceName = 'nonce'): bool
 {
     if (!isset($_REQUEST[$nonceName])) {
@@ -317,4 +325,18 @@ function verify_nonce(string $action, string $nonceName = 'nonce'): bool
 function wp_empty($value): bool
 {
     return (empty($value) || is_wp_error($value));
+}
+
+/**
+ * @param int|null $time Optional. Time to convert. Current time by default.
+ * @return int Current time with timezone offset.
+ */
+function wp_time($time = null): int
+{
+    if (is_null($time)) {
+        return current_time('timestamp', true);
+    } else {
+        // Do just like current_time() does with offset
+        return $time + (int)(get_option('gmt_offset') * HOUR_IN_SECONDS);
+    }
 }

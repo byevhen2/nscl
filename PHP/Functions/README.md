@@ -1,4 +1,4 @@
-# Functions (129)
+# Functions (131)
 * `_get()` (_request.php_)
 * `_post()` (_request.php_)
 * `_request()` (_request.php_)
@@ -91,6 +91,7 @@
 * `run()` (_script.php_)
 * `run_in_background()` (_script.php_)
 * `scan_dir()` (_dir.php_)
+* `set_wp_timezone()` (_wordpress.php_)
 * `slash()` (_format.php_)
 * `slash_left()` (_format.php_)
 * `stderr()` (_stdio.php_)
@@ -127,6 +128,7 @@
 * `values()` (_array.php_)
 * `verify_nonce()` (_wordpress.php_)
 * `wp_empty()` (_wordpress.php_)
+* `wp_time()` (_wordpress.php_)
 * `wrap()` (_format.php; see also array_wrap()_)
 
 ## Array Functions (19)
@@ -252,7 +254,7 @@
 * `validate_relation()`
 * `validate_string()`
 
-## WordPress Functions (22)
+## WordPress Functions (24)
 * `add_query_sign()`
 * `ajax_url()`
 * `check_hash()`
@@ -273,8 +275,10 @@
 * `make_title()`
 * `mime_type()`
 * `readable_post_statuses()`
+* `set_wp_timezone()`
 * `verify_nonce()`
 * `wp_empty()`
+* `wp_time()`
 
 ## WPML Functions (22)
 * `get_current_id()`
