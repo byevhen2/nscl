@@ -127,10 +127,20 @@ function array_remove(array $array, $value, bool $resetIndexes = false): array
     return ($resetIndexes) ? array_values($array) : $array;
 }
 
-function array_wrap(array $array, string $wrapper)
+/**
+ * @param array $array
+ * @param string $before
+ * @param string $after Optional. If omitted then $before will be used.
+ * @return array
+ */
+function array_wrap(array $array, string $before, string? $after = null): array
 {
-    return array_map(function ($value) use ($wrapper) {
-        return $wrapper . $value . $wrapper;
+    if (is_null($after)) {
+        $after = $before;
+    }
+
+    return array_map(function ($item) use ($before, $after) {
+        return $before . $item . $after;
     }, $array);
 }
 

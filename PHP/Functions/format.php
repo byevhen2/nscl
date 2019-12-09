@@ -134,17 +134,22 @@ function unslash_left(string $uri): string
 }
 
 /**
- * @param string|array $subject
- * @param string $wrapper
+ * @param string|array $var
+ * @param string $before
+ * @param string $after Optional. If omitted then $before will be used.
  * @return string|array
  */
-function wrap($subject, string $wrapper)
+function wrap($var, string $before, string? $after = null)
 {
-    if (is_string($subject)) {
-        return $wrapper . $subject . $wrapper;
+    if (is_null($after)) {
+        $after = $before;
+    }
+
+    if (!is_array($var)) {
+        return $before . $var . $after;
     } else {
-        return array_map(function ($string) use ($wrapper) {
-            return $wrapper . $subject . $wrapper;
-        }, $subject);
+        return array_map(function ($item) use ($before, $after) {
+            return $before . $item . $after;
+        }, $var);
     }
 }
