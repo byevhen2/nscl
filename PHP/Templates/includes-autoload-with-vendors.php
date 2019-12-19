@@ -18,12 +18,12 @@ spl_autoload_register(function ($class) {
         $file = $vendors[$class];
     } else {
         // Split into namespace and class name
-        if (!preg_match('/(.+\\)(.+)/', $class, $components)) {
+        if (!preg_match('/(?<namespace>.+\\\\)(?<class>.+)/', $class, $components)) {
             return; // Failed
         }
 
-        $namespace = $components[1]; // Something like "Namespace\Package\SubPackage\"
-        $className = $components[2]; // Something like "ClassX"
+        $namespace = $components['namespace']; // Something like "Namespace\Package\SubPackage\"
+        $className = $components['class'];     // Something like "ClassX"
 
         // "Namespace\Package\SubPackage\" -> "includes/package/sub-package/"
         $namespace = str_replace(__NAMESPACE__, 'includes', $namespace);
