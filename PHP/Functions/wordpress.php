@@ -75,6 +75,16 @@ function check_option_length(string $option): int
 }
 
 /**
+ * @param int $time
+ * @return int
+ */
+function convert_to_wp_time(int $time): int
+{
+    // Do just like current_time() does with offset
+    return $time + (int)(get_option('gmt_offset') * HOUR_IN_SECONDS);
+}
+
+/**
  * @param mixed $value
  * @return string The hash as a 32-character hexadecimal number.
  */
@@ -328,15 +338,11 @@ function wp_empty($value): bool
 }
 
 /**
- * @param int|null $time Optional. Time to convert. Current time by default.
+ * Shortcut for current_time().
+ *
  * @return int Current time with timezone offset.
  */
-function wp_time($time = null): int
+function wp_time(): int
 {
-    if (is_null($time)) {
-        return current_time('timestamp', true);
-    } else {
-        // Do just like current_time() does with offset
-        return $time + (int)(get_option('gmt_offset') * HOUR_IN_SECONDS);
-    }
+    return current_time('timestamp', true);
 }

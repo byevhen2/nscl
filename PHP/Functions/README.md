@@ -1,4 +1,4 @@
-# Functions (131)
+# Functions (132)
 * `_get()` (_request.php_)
 * `_post()` (_request.php_)
 * `_request()` (_request.php_)
@@ -16,6 +16,7 @@
 * `check_hash()` (_wordpress.php_)
 * `check_option()` (_wordpress.php_)
 * `check_option_length()` (_wordpress.php_)
+* `convert_to_wp_time()` (_wordpress.php_)
 * `create_hash()` (_wordpress.php_)
 * `create_table()` (_wordpress.php_)
 * `current_date_with_time()` (_date.php_)
@@ -254,12 +255,13 @@
 * `validate_relation()`
 * `validate_string()`
 
-## WordPress Functions (24)
+## WordPress Functions (25)
 * `add_query_sign()`
 * `ajax_url()`
 * `check_hash()`
 * `check_option()`
 * `check_option_length()`
+* `convert_to_wp_time()`
 * `create_hash()`
 * `create_table()`
 * `get_current_frontend_url()`
