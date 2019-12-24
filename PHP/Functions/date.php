@@ -41,6 +41,14 @@ function current_date_with_time(string $time): DateTime
 }
 
 /**
+ * @return int
+ */
+function current_year(): int
+{
+    return intval(strftime('%Y'));
+}
+
+/**
  * @param float $gmt
  * @param bool $addZeroOffset Optional.
  * @return string "UTC", "UTC-0:30", "UTC+2" etc.

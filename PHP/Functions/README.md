@@ -1,4 +1,4 @@
-# Functions (132)
+# Functions (133)
 * `_get()` (_request.php_)
 * `_post()` (_request.php_)
 * `_request()` (_request.php_)
@@ -20,6 +20,7 @@
 * `create_hash()` (_wordpress.php_)
 * `create_table()` (_wordpress.php_)
 * `current_date_with_time()` (_date.php_)
+* `current_year()` (_date.php_)
 * `darker_color()` (_color.php_)
 * `decimals_count()` (_format.php_)
 * `dir_files()` (_dir.php_)
@@ -160,9 +161,10 @@
 * `lighter_color()`
 * `to_long_hex_color()`
 
-## Date Functions (5)
+## Date Functions (6)
 * `calc_nights()`
 * `current_date_with_time()`
+* `current_year()`
 * `gmt2utc()`
 * `next_timestamp_with_time()`
 * `parse_time()`
