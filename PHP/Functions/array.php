@@ -312,6 +312,15 @@ function last_key($array)
 
 /**
  * @param array $array
+ * @return array
+ */
+function mirror_values(array $array): array
+{
+    return array_combine($array, $array);
+}
+
+/**
+ * @param array $array
  * @return array All values of the multidimensional array.
  */
 function values(array $array): array

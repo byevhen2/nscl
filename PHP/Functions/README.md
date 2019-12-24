@@ -1,4 +1,4 @@
-# Functions (133)
+# Functions (134)
 * `_get()` (_request.php_)
 * `_post()` (_request.php_)
 * `_request()` (_request.php_)
@@ -74,6 +74,7 @@
 * `make_slug()` (_wordpress.php_)
 * `make_title()` (_wordpress.php_)
 * `mime_type()` (_wordpress.php_)
+* `mirror_values()` (_array.php_)
 * `next_timestamp_with_time()` (_date.php_)
 * `nscl_load()` (_load.php_)
 * `parse_time()` (_date.php_)
@@ -133,7 +134,7 @@
 * `wp_time()` (_wordpress.php_)
 * `wrap()` (_format.php; see also array_wrap()_)
 
-## Array Functions (19)
+## Array Functions (20)
 * `aimplodef()`
 * `array_disjunction()`
 * `array_insert_after()`
@@ -152,6 +153,7 @@
 * `keys()`
 * `keys_and_values()`
 * `last_key()`
+* `mirror_values()`
 * `values()`
 
 ## Color Functions (5)
