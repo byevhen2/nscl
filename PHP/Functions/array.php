@@ -320,6 +320,17 @@ function mirror_values(array $array): array
 }
 
 /**
+ * Unlike array_unique() this function resets all indexes.
+ *
+ * @param array $array
+ * @return array
+ */
+function unique_values(array $array): array
+{
+    return array_values(array_unique($array));
+}
+
+/**
  * @param array $array
  * @return array All values of the multidimensional array.
  */

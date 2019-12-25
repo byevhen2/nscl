@@ -1,4 +1,4 @@
-# Functions (134)
+# Functions (135)
 * `_get()` (_request.php_)
 * `_post()` (_request.php_)
 * `_request()` (_request.php_)
@@ -117,6 +117,7 @@
 * `trim_decimal_zeros()` (_format.php_)
 * `typeof()` (_types.php_)
 * `unique_filename()` (_file.php_)
+* `unique_values()` (_array.php_)
 * `unslash()` (_format.php_)
 * `unslash_left()` (_format.php_)
 * `uuid_v4()` (_uuid.php_)
@@ -134,7 +135,7 @@
 * `wp_time()` (_wordpress.php_)
 * `wrap()` (_format.php; see also array_wrap()_)
 
-## Array Functions (20)
+## Array Functions (21)
 * `aimplodef()`
 * `array_disjunction()`
 * `array_insert_after()`
@@ -154,6 +155,7 @@
 * `keys_and_values()`
 * `last_key()`
 * `mirror_values()`
+* `unique_values()`
 * `values()`
 
 ## Color Functions (5)
