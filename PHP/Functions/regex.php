@@ -3,6 +3,17 @@
 declare(strict_types = 1);
 
 /**
+ * Variant of preq_quote() with '/' as the delimeter.
+ *
+ * @param string $str
+ * @return string
+ */
+function preg_quote_common(string $str): string
+{
+    return preg_quote($str, '/');
+}
+
+/**
  * Combine results of two subpatterns into single array.
  *
  * @param string $pattern

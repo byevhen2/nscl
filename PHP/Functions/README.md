@@ -1,4 +1,4 @@
-# Functions (135)
+# Functions (139)
 * `_get()` (_request.php_)
 * `_post()` (_request.php_)
 * `_request()` (_request.php_)
@@ -80,6 +80,7 @@
 * `parse_time()` (_date.php_)
 * `php_executable()` (_script.php_)
 * `posint()` (_format.php_)
+* `preg_quote_common()` (_regex.php_)
 * `readable_post_statuses()` (_wordpress.php_)
 * `real_path()` (_dir.php_)
 * `regex_combine()` (_regex.php_)
@@ -100,9 +101,12 @@
 * `stderr()` (_stdio.php_)
 * `stdout()` (_stdio.php_)
 * `str_ends_with()` (_string.php_)
+* `str_nreplace()` (_string.php_)
+* `str_radd()` (_string.php_)
+* `str_replace_once()` (_string.php_)
 * `str_starts_with()` (_string.php_)
 * `str_to_bool()` (_string.php_)
-* `str_radd()` (_string.php_)
+* `str_unprefix()` (_string.php_)
 * `switch_language()` (_wpml.php_)
 * `switch_to_all_languages()` (_wpml.php_)
 * `switch_to_default_language()` (_wpml.php_)
@@ -211,7 +215,8 @@
 ## Load Functions (1)
 * `nscl_load()`
 
-## Regular Expression Functions (4)
+## Regular Expression Functions (5)
+* `preg_quote_common()`
 * `regex_combine()`
 * `regex_match()`
 * `regex_match_all()`
@@ -235,11 +240,14 @@
 * `stderr()`
 * `stdout()`
 
-## String Functions (4)
+## String Functions (7)
 * `str_ends_with()`
+* `str_nreplace()`
+* `str_radd()`
+* `str_replace_once()`
 * `str_starts_with()`
 * `str_to_bool()`
-* `str_radd()`
+* `str_unprefix()`
 
 ## Type Functions (1)
 * `typeof()`
