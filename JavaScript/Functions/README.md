@@ -1,5 +1,6 @@
-# Functions (8)
+# Functions (9)
 * `array_fill()` (_array.js_)
+* `days_in_month()` (_date.js_)
 * `in_range()` (_range.js_)
 * `limit()` (_range.js_)
 * `random()` (_random.js_)
@@ -10,6 +11,9 @@
 
 ## Array Functions (1)
 * `array_fill()`
+
+## Date Functions (1)
+* `days_in_month()`
 
 ## Location Functions (2)
 * `redirect_to()`

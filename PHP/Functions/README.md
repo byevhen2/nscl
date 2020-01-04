@@ -1,4 +1,4 @@
-# Functions (139)
+# Functions (143)
 * `_get()` (_request.php_)
 * `_post()` (_request.php_)
 * `_request()` (_request.php_)
@@ -22,6 +22,7 @@
 * `current_date_with_time()` (_date.php_)
 * `current_year()` (_date.php_)
 * `darker_color()` (_color.php_)
+* `days_in_month()` (_date.php_, _wordpress.php_)
 * `decimals_count()` (_format.php_)
 * `dir_files()` (_dir.php_)
 * `escape_json_unicodes()` (_json.php_)
@@ -75,6 +76,7 @@
 * `make_title()` (_wordpress.php_)
 * `mime_type()` (_wordpress.php_)
 * `mirror_values()` (_array.php_)
+* `month_names()` (_date.php_, _wordpress.php_)
 * `next_timestamp_with_time()` (_date.php_)
 * `nscl_load()` (_load.php_)
 * `parse_time()` (_date.php_)
@@ -169,11 +171,13 @@
 * `lighter_color()`
 * `to_long_hex_color()`
 
-## Date Functions (6)
+## Date Functions (8)
 * `calc_nights()`
 * `current_date_with_time()`
 * `current_year()`
+* `days_in_month()`
 * `gmt2utc()`
+* `month_names()`
 * `next_timestamp_with_time()`
 * `parse_time()`
 
@@ -269,7 +273,7 @@
 * `validate_relation()`
 * `validate_string()`
 
-## WordPress Functions (25)
+## WordPress Functions (27)
 * `add_query_sign()`
 * `ajax_url()`
 * `check_hash()`
@@ -278,6 +282,7 @@
 * `convert_to_wp_time()`
 * `create_hash()`
 * `create_table()`
+* `days_in_month()`
 * `get_current_frontend_url()`
 * `get_editing_post_id()`
 * `get_uncached_option()`
@@ -290,6 +295,7 @@
 * `make_slug()`
 * `make_title()`
 * `mime_type()`
+* `month_names()`
 * `readable_post_statuses()`
 * `set_wp_timezone()`
 * `verify_nonce()`

@@ -145,6 +145,18 @@ function create_table(string $table, array $fields, $primaryKey = null, array $c
     return $wpdb->query($sql);
 }
 
+/**
+ * @param int $month
+ * @param int $year
+ * @return int
+ */
+function days_in_month(int $month, int $year): int
+{
+    $daysInMonth = cal_days_in_month(CAL_GREGORIAN, $month, $year);
+
+    return apply_filters('days_in_month', $daysInMonth, $month, $year);
+}
+
 function get_current_frontend_url(bool $stripQueryArgs = false): string
 {
     $url = get_permalink();
@@ -298,6 +310,17 @@ function mime_type(string $path): string
 {
     $mime = wp_check_filetype(basename($path));
     return ($mime['type'] ?: 'undefined/none');
+}
+
+/**
+ * @return string[] [Month number (starting from 1) => Month name]
+ */
+function month_names(): array
+{
+    $gregorianCalendar = cal_info(CAL_GREGORIAN);
+    $months = array_map('translate', $gregorianCalendar['months']);
+
+    return apply_filters('month_names', $months);
 }
 
 /**

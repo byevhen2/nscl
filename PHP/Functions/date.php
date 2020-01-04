@@ -49,6 +49,16 @@ function current_year(): int
 }
 
 /**
+ * @param int $month
+ * @param int $year
+ * @return int
+ */
+function days_in_month(int $month, int $year): int
+{
+    return cal_days_in_month(CAL_GREGORIAN, $month, $year);
+}
+
+/**
  * @param float $gmt
  * @param bool $addZeroOffset Optional.
  * @return string "UTC", "UTC-0:30", "UTC+2" etc.
@@ -78,6 +88,15 @@ function gmt2utc(float $gmt, bool $addZeroOffset = true): string
     }
 
     return $utc;
+}
+
+/**
+ * @return string[] [Month number (starting from 1) => Month name]
+ */
+function month_names(): array
+{
+    $gregorianCalendar = cal_info(CAL_GREGORIAN);
+    return $gregorianCalendar['months'];
 }
 
 /**
