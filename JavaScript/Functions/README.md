@@ -1,5 +1,6 @@
-# Functions (9)
+# Functions (10)
 * `array_fill()` (_array.js_)
+* `current_year()` (_date.js_)
 * `days_in_month()` (_date.js_)
 * `in_range()` (_range.js_)
 * `limit()` (_range.js_)
@@ -12,7 +13,8 @@
 ## Array Functions (1)
 * `array_fill()`
 
-## Date Functions (1)
+## Date Functions (2)
+* `current_year()`
 * `days_in_month()`
 
 ## Location Functions (2)

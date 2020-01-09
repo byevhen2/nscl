@@ -1,4 +1,13 @@
 /**
+ * @returns {Number}
+ */
+function current_year()
+{
+    let currentDate = new Date();
+    return currentDate.getFullYear();
+}
+
+/**
  * @param {Number} month Month number starting from 1 (January).
  * @param {Number} year
  * @returns {Number}
