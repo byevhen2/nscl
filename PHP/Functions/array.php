@@ -147,6 +147,24 @@ function array_remove(array $array, $value, bool $resetIndexes = false): array
 }
 
 /**
+ * @param array $haystack
+ * @param callable $checkCallback The callback check function. The function must
+ *     return TRUE if the proper element was found or FALSE otherwise. Gets the
+ *     value of the element as the first argument and the key as second.
+ * @return mixed The key for searched element or FALSE.
+ */
+function array_usearch(array $haystack, callable $checkCallback)
+{
+    foreach ($haystack as $key => $value) {
+        if ($checkCallback($value, $key)) {
+            return $key;
+        }
+    }
+
+    return false;
+}
+
+/**
  * @param array $array
  * @param string $before
  * @param string $after Optional. If omitted then $before will be used.

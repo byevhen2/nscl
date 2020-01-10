@@ -1,4 +1,4 @@
-# Functions (149)
+# Functions (150)
 * `_get()` (_request.php_)
 * `_post()` (_request.php_)
 * `_request()` (_request.php_)
@@ -15,6 +15,7 @@
 * `array_length()` (_array.php_)
 * `array_move()` (_array.php_)
 * `array_remove()` (_array.php_)
+* `array_usearch()` (_array.php_)
 * `array_wrap()` (_array.php; see also wrap()_)
 * `as_array()` (_array.php_)
 * `calc_nights()` (_date.php_)
@@ -147,7 +148,7 @@
 * `wp_time()` (_wordpress.php_)
 * `wrap()` (_format.php; see also array_wrap()_)
 
-## Array Functions (22)
+## Array Functions (23)
 * `aimplodef()`
 * `array_disjunction()`
 * `array_insert_after()`
@@ -155,6 +156,7 @@
 * `array_length()`
 * `array_move()`
 * `array_remove()`
+* `array_usearch()`
 * `array_wrap()`
 * `as_array()`
 * `explode_by_spaces()`
