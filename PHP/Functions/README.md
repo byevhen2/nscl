@@ -1,7 +1,11 @@
-# Functions (143)
+# Functions (148)
 * `_get()` (_request.php_)
 * `_post()` (_request.php_)
 * `_request()` (_request.php_)
+* `add_action_once()` (_wordpress.php_)
+* `add_filter_once()` (_wordpress.php_)
+* `add_one_time_action()` (_wordpress.php_)
+* `add_one_time_filter()` (_wordpress.php_)
 * `add_query_sign()` (_wordpress.php_)
 * `aimplodef()` (_array.php_)
 * `ajax_url()` (_wordpress.php_)
@@ -123,6 +127,7 @@
 * `trim_decimal_zeros()` (_format.php_)
 * `typeof()` (_types.php_)
 * `unique_filename()` (_file.php_)
+* `unique_filter_class_id()` (_wordpress.php_)
 * `unique_values()` (_array.php_)
 * `unslash()` (_format.php_)
 * `unslash_left()` (_format.php_)
@@ -273,7 +278,11 @@
 * `validate_relation()`
 * `validate_string()`
 
-## WordPress Functions (27)
+## WordPress Functions (32)
+* `add_action_once()`
+* `add_filter_once()`
+* `add_one_time_action()`
+* `add_one_time_filter()`
 * `add_query_sign()`
 * `ajax_url()`
 * `check_hash()`
@@ -298,6 +307,7 @@
 * `month_names()`
 * `readable_post_statuses()`
 * `set_wp_timezone()`
+* `unique_filter_class_id()`
 * `verify_nonce()`
 * `wp_empty()`
 * `wp_time()`

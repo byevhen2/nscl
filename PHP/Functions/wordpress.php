@@ -3,6 +3,90 @@
 declare(strict_types = 1);
 
 /**
+ * The function only checks the actions that was added by itself
+ * (does not check what you previously added by add_action()).
+ *
+ * @param string $hook
+ * @param callable $callback
+ * @param int $priority Optional. 10 by default.
+ * @param int $argc Optional. The number of accepted arguments. 1 by default.
+ * @return bool Whether the action was added or not.
+ */
+function add_action_once(string $hook, callable $callback, int $priority = 10, int $argc = 1): bool
+{
+    return add_filter_once($hook, $callback, $priority, $argc);
+}
+
+/**
+ * The function only checks the filters that was added by itself
+ * (does not check what you previously added by add_filter()).
+ *
+ * @param string $hook
+ * @param callable $callback
+ * @param int $priority Optional. 10 by default.
+ * @param int $argc Optional. The number of accepted arguments. 1 by default.
+ * @return bool Whether the filter was added or not.
+ *
+ * @global string[] $wp_filter_classes
+ */
+function add_filter_once(string $hook, callable $callback, int $priority = 10, int $argc = 1): bool
+{
+    global $wp_filter_classes;
+
+    if (!isset($wp_filter_classes)) {
+        $wp_filter_classes = [];
+    }
+
+    // Since references to different instances produces a unique ID,
+    // just use the class for identification purposes
+    $callbackId = unique_filter_class_id($hook, $callback, $priority);
+
+    if (!in_array($callbackId, $wp_filter_classes)) {
+        $wp_filter_classes[] = $callbackId;
+
+        // add_filter() always returns TRUE
+        return add_filter($hook, $callback, $priority, $argc);
+    } else {
+        return false;
+    }
+}
+
+/**
+ * @param string $hook
+ * @param callable $callback
+ * @param int $priority Optional. 10 by default.
+ * @param int $argc Optional. The number of accepted arguments. 1 by default.
+ * @return true Always returns TRUE.
+ */
+function add_one_time_action(string $hook, callable $callback, int $priority = 10, int $argc = 1): bool
+{
+    return add_one_time_filter($hook, $callback, $priority, $argc);
+}
+
+/**
+ * @param string $hook
+ * @param callable $callback
+ * @param int $priority Optional. 10 by default.
+ * @param int $argc Optional. The number of accepted arguments. 1 by default.
+ * @return true Always returns TRUE.
+ */
+function add_one_time_filter(string $hook, callable $callback, int $priority = 10, int $argc = 1): bool
+{
+    $caller = null;
+    $caller = function () use ($hook, $callback, $priority, &$caller) {
+        $args = func_get_args();
+        $response = call_user_func_array($callback, $args);
+
+        remove_filter($hook, $caller, $priority);
+
+        return $response;
+    };
+
+    // add_filter() always return TRUE
+    return add_filter($hook, $caller, $priority, $argc);
+}
+
+/**
  * Add "?" sign to the URL.
  *
  * @param string $url
@@ -342,6 +426,24 @@ function readable_post_statuses(): array
 function set_wp_timezone(\DateTime $date)
 {
     $date->setTimezone(wp_timezone());
+}
+
+/**
+ * Produces the same filter ID for all instances of the same class.
+ *
+ * @param string $hook
+ * @param callable $callback
+ * @param int $priority
+ * @return string
+ */
+function unique_filter_class_id($hook, $callback, $priority)
+{
+    if (is_array($callback) && is_object($callback[0])) {
+        // Use the class name to generate the ID
+        $callback[0] = get_class($callback[0]);
+    }
+
+    return _wp_filter_build_unique_id($hook, $callback, $priority);
 }
 
 function verify_nonce(string $action, string $nonceName = 'nonce'): bool
