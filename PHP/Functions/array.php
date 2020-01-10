@@ -55,26 +55,45 @@ function array_disjunction(array $a, array $b, array $_ = null): array
 }
 
 /**
- * Add an array after the specified key in the associative array.
+ * Add an array after the specified position.
  *
- * @param mixed $searchKey
- * @param array $insert Array to insert.
  * @param array $array Subject array.
+ * @param int $position
+ * @param array $insert Array to insert.
  * @return array Result array with inserted items.
  */
-function array_insert_after($searchKey, array $insert, array $array)
+function array_insert_after(array $array, int $position, array $insert): array
 {
-    $index = array_search($searchKey, array_keys($array));
-
-    if ($index !== false) {
-        $result = array_slice($array, 0, $index + 1, true)
-            + $insert
-            + array_slice($array, $index + 1, count($array), true);
+    if ($position < 0) {
+        return array_merge($insert, $array);
+    } else if ($position >= count($array)) {
+        return array_merge($array, $insert);
     } else {
-        $result = $array + $insert;
+        return array_merge(
+            array_slice($array, 0, $position + 1, true),
+            $insert,
+            array_slice($array, $position + 1, count($array), true)
+        );
     }
+}
 
-    return $result;
+/**
+ * Add an array after the specified key in the associative array.
+ *
+ * @param array $array Subject array.
+ * @param mixed $searchKey
+ * @param array $insert Array to insert.
+ * @return array Result array with inserted items.
+ */
+function array_insert_after_key(array $array, $searchKey, array $insert): array
+{
+    $position = array_search($searchKey, array_keys($array));
+
+    if ($position !== false) {
+        return array_insert_after($array, $position, $insert);
+    } else {
+        return array_insert_after($array, count($array), $insert);
+    }
 }
 
 function array_length($var): int
