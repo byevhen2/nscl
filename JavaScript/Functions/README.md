@@ -1,6 +1,7 @@
-# Functions (12)
+# Functions (13)
 * `$reset_options_number()` (_dom.js_)
 * `array_fill()` (_array.js_)
+* `array_filter()` (_array.js_)
 * `current_year()` (_date.js_)
 * `days_in_month()` (_date.js_)
 * `in_range()` (_range.js_)
@@ -12,8 +13,9 @@
 * `reload_page()` (_location.js_)
 * `reset_options_number()` (_dom.js_)
 
-## Array Functions (1)
+## Array Functions (2)
 * `array_fill()`
+* `array_filter()`
 
 ## Date Functions (2)
 * `current_year()`
