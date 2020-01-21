@@ -1,4 +1,4 @@
-# Functions (150)
+# Functions (151)
 * `_get()` (_request.php_)
 * `_post()` (_request.php_)
 * `_request()` (_request.php_)
@@ -59,6 +59,7 @@
 * `implode_and()` (_array.php_)
 * `implodef()` (_array.php_)
 * `is_active_language()` (_wpml.php_)
+* `is_base_request()` (_wordpress.php_)
 * `is_default_id()` (_wpml.php_)
 * `is_translatable_post_type()` (_wpml.php_)
 * `is_wpml_active()` (_wpml.php_)
@@ -282,7 +283,7 @@
 * `validate_relation()`
 * `validate_string()`
 
-## WordPress Functions (32)
+## WordPress Functions (33)
 * `add_action_once()`
 * `add_filter_once()`
 * `add_one_time_action()`
@@ -301,6 +302,7 @@
 * `get_uncached_option()`
 * `get_wp_timezone()`
 * `is_active_plugin()`
+* `is_base_request()`
 * `is_edit_post()`
 * `is_edit_post_type()`
 * `is_wp_version()`

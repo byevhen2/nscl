@@ -319,6 +319,38 @@ function is_active_plugin(string $plugin): bool
     return is_plugin_active($plugin);
 }
 
+/**
+ * Determine if the current view is the "All" view.
+ *
+ * @see \WP_Posts_List_Table::is_base_request()
+ *
+ * @param string|null $postType Optional. NULL by default.
+ * @return bool
+ *
+ * @global string $typenow
+ */
+function is_base_request(string? $postType = null): bool
+{
+    global $typenow;
+
+    $allowedVars = [
+        'post_type' => true,
+        'paged'     => true,
+        'all_posts' => true
+    ];
+
+    $unallowedVars = array_diff_key($_GET, $allowedVars);
+
+    $isBase = count($unallowedVars) == 0;
+
+    // Add additional check of the post type
+    if (!is_null($postType) && $isBase) {
+        $isBase = $postType === $typenow;
+    }
+
+    return $isBase;
+}
+
 function is_edit_post(): bool
 {
     global $pagenow;
