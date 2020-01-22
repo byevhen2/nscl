@@ -335,8 +335,9 @@ function is_base_request(string? $postType = null): bool
 
     $allowedVars = [
         'post_type' => true,
+        'all_posts' => true,
         'paged'     => true,
-        'all_posts' => true
+        'ids'       => true // After doing Bulk Actions
     ];
 
     $unallowedVars = array_diff_key($_GET, $allowedVars);
