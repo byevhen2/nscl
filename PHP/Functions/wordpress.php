@@ -337,12 +337,21 @@ function is_base_request(string? $postType = null): bool
         'post_type' => true,
         'all_posts' => true,
         'paged'     => true,
-        'ids'       => true // After doing Bulk Actions
+        // After doing Bulk Actions
+        'ids'       => true,
+        // Some of the WPML fields
+        'lang'      => true,
+        'admin_bar' => true // When changing the language from the admin bar
     ];
 
     $unallowedVars = array_diff_key($_GET, $allowedVars);
 
     $isBase = count($unallowedVars) == 0;
+
+    // It's not a base request anymore when requesting posts for all languages
+    if (isset($_GET['lang']) && $_GET['lang'] === 'all') {
+        $isBase = false;
+    }
 
     // Add additional check of the post type
     if (!is_null($postType) && $isBase) {
