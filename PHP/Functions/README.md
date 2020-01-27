@@ -1,4 +1,4 @@
-# Functions (151)
+# Functions (154)
 * `_get()` (_request.php_)
 * `_post()` (_request.php_)
 * `_request()` (_request.php_)
@@ -51,6 +51,7 @@
 * `get_default_language()` (_wpml.php_)
 * `get_editing_post_id()` (_wordpress.php_)
 * `get_language_code_from_locale()` (_wpml.php_)
+* `get_the_post_type()` (_wordpress.php_)
 * `get_uncached_option()` (_wordpress.php_)
 * `get_wp_language()` (_wpml.php_)
 * `get_wp_timezone()` (_wordpress.php_)
@@ -60,6 +61,7 @@
 * `implodef()` (_array.php_)
 * `is_active_language()` (_wpml.php_)
 * `is_base_request()` (_wordpress.php_)
+* `is_current_page()` (_wordpress.php_)
 * `is_default_id()` (_wpml.php_)
 * `is_translatable_post_type()` (_wpml.php_)
 * `is_wpml_active()` (_wpml.php_)
@@ -69,6 +71,7 @@
 * `is_edit_post_type()` (_wordpress.php_)
 * `is_numeric_array()` (_array.php_)
 * `is_numeric_natural_array()` (_array.php_)
+* `is_single_post_type_page()` (_wordpress.php_)
 * `is_valid_url()` (_validate.php_)
 * `is_wp_version()` (_wordpress.php_)
 * `keys()` (_array.php_)
@@ -283,7 +286,7 @@
 * `validate_relation()`
 * `validate_string()`
 
-## WordPress Functions (33)
+## WordPress Functions (36)
 * `add_action_once()`
 * `add_filter_once()`
 * `add_one_time_action()`
@@ -299,12 +302,15 @@
 * `days_in_month()`
 * `get_current_frontend_url()`
 * `get_editing_post_id()`
+* `get_the_post_type()`
 * `get_uncached_option()`
 * `get_wp_timezone()`
 * `is_active_plugin()`
 * `is_base_request()`
+* `is_current_page()`
 * `is_edit_post()`
 * `is_edit_post_type()`
+* `is_single_post_type_page()`
 * `is_wp_version()`
 * `make_dash_slug()`
 * `make_slug()`

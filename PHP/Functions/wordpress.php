@@ -267,6 +267,23 @@ function get_editing_post_id(): int
 }
 
 /**
+ * @param \WP_Post|int $post
+ * @return string
+ */
+function get_the_post_type($post): bool
+{
+    if (!is_a($post, '\WP_Post')) {
+        $post = get_post($post);
+    }
+
+    if (!is_null($post)) {
+        return $post->post_type;
+    } else {
+        return '';
+    }
+}
+
+/**
  * @global wpdb $wpdb
  *
  * @param string $option Option name.
@@ -362,6 +379,17 @@ function is_base_request(string? $postType = null): bool
     return $isBase;
 }
 
+/**
+ * An alias of is_page().
+ *
+ * @param int $pageId
+ * @return bool
+ */
+function is_current_page(int $pageId): bool
+{
+    return is_page($pageId);
+}
+
 function is_edit_post(): bool
 {
     global $pagenow;
@@ -372,6 +400,15 @@ function is_edit_post_type(string $postType): bool
 {
     global $pagenow, $typenow;
     return is_admin() && in_array($pagenow, array('post.php', 'post-new.php')) && $typenow === $postType;
+}
+
+/**
+ * @param string $postType
+ * @return bool
+ */
+function is_single_post_type_page(string $postType): bool
+{
+    return is_singular($postType);
 }
 
 function is_wp_version(string $atLeast, bool $clean = false): bool
