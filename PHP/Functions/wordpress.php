@@ -267,23 +267,6 @@ function get_editing_post_id(): int
 }
 
 /**
- * @param \WP_Post|int $post
- * @return string
- */
-function get_the_post_type($post): bool
-{
-    if (!is_a($post, '\WP_Post')) {
-        $post = get_post($post);
-    }
-
-    if (!is_null($post)) {
-        return $post->post_type;
-    } else {
-        return '';
-    }
-}
-
-/**
  * @global wpdb $wpdb
  *
  * @param string $option Option name.
