@@ -55,6 +55,31 @@ function array_disjunction(array $a, array $b, array $_ = null): array
 }
 
 /**
+ * Example: <code>[10 => "x", 20 => "x", 30 => "y"]</code> -> <code>["x" => [10, 20], "y" => 30]</code>.
+ *
+ * @param array $array Array to flip.
+ * @param bool $arraySingle Optional. Convert single value into array. FALSE by default.
+ * @return array
+ */
+function array_flip_duplicates(array $array, bool $arraySingle = false): array
+{
+    $values = array_unique($array); // ["x", "y"]
+    $flip = [];
+
+    foreach ($values as $value) {
+        $keys = array_keys($array, $value); // [10, 20] and [30]
+
+        if ($arraySingle || count($keys) > 1) {
+            $flip[$value] = $keys;
+        } else {
+            $flip[$value] = reset($keys);
+        }
+    }
+
+    return $flip;
+}
+
+/**
  * Add an array after the specified position.
  *
  * @param array $array Subject array.
@@ -310,6 +335,15 @@ function keys(array $array, bool $skipNumeric = true): array
     return $keys;
 }
 
+/**
+ * Merge keys and values into a single array.
+ *
+ * Also merges the nested arrays.
+ *
+ * @param array $array
+ * @param bool $skipNumericKeys Optional. TRUE by default.
+ * @return array
+ */
 function keys_and_values(array $array, bool $skipNumericKeys = true): array
 {
     $items = [];
