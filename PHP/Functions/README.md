@@ -1,4 +1,4 @@
-# Functions (154)
+# Functions (156)
 * `_get()` (_request.php_)
 * `_post()` (_request.php_)
 * `_request()` (_request.php_)
@@ -14,6 +14,7 @@
 * `array_insert_after()` (_array.php_)
 * `array_insert_after_key()` (_array.php_)
 * `array_length()` (_array.php_)
+* `array_map_reset()` (_array.php_)
 * `array_move()` (_array.php_)
 * `array_remove()` (_array.php_)
 * `array_usearch()` (_array.php_)
@@ -38,6 +39,7 @@
 * `file_extension()` (_file.php_)
 * `file_name()` (_file.php_)
 * `first_key()` (_array.php_)
+* `first_pair()` (_array.php_)
 * `format_size()` (_format.php_)
 * `format_size_si()` (_format.php_)
 * `full_file_name()` (_file.php_)
@@ -152,13 +154,14 @@
 * `wp_time()` (_wordpress.php_)
 * `wrap()` (_format.php; see also array_wrap()_)
 
-## Array Functions (24)
+## Array Functions (26)
 * `aimplodef()`
 * `array_disjunction()`
 * `array_flip_duplicates()`
 * `array_insert_after()`
 * `array_insert_after_key()`
 * `array_length()`
+* `array_map_reset()`
 * `array_move()`
 * `array_remove()`
 * `array_usearch()`
@@ -166,6 +169,7 @@
 * `as_array()`
 * `explode_by_spaces()`
 * `first_key()`
+* `first_pair()`
 * `implode_and()`
 * `implodef()`
 * `is_assoc_array()`
