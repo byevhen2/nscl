@@ -127,6 +127,21 @@ function array_length($var): int
 }
 
 /**
+ * Applies the callback to the items and resets the indexes of the result array.
+ *
+ * @param callable $callback
+ * @param array $items
+ * @return array
+ */
+function array_map_reset(callable $callback, array $items): array
+{
+    $map = array_map($callback, $items);
+    $map = array_filter($map);
+
+    return array_values($map); // Get rid of gaps in keys
+}
+
+/**
  * Move an array element to a new index. Moves the element before the existing
  * item $array[$to].
  *
@@ -243,12 +258,24 @@ function explode_by_spaces(string $string): array
  * @deprecated since PHP 7.3
  * @see array_key_first()
  */
-function first_key($array)
+function first_key(array $array)
 {
     // array_keys() + reset() is faster way than using foreach cycle, especially
     // on big arrays
     $keys = array_keys($array);
     return reset($keys);
+}
+
+/**
+ * @param array $array
+ * @return array [First key, First value]
+ */
+function first_pair(array $array): array
+{
+    $firstValue = reset($array);
+    $firstKey = key($array);
+
+    return [$firstKey, $firstValue];
 }
 
 /**
