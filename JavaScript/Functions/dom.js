@@ -67,3 +67,11 @@ function reset_options_number(select, limit, textCallback = number => number)
         extraOptions.forEach(option => option.remove());
     }
 }
+
+/**
+ * @param {Function} callback
+ */
+function on_document_load(callback)
+{
+    document.addEventListener('DOMContentLoaded', callback);
+}

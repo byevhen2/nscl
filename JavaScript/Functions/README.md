@@ -1,4 +1,4 @@
-# Functions (13)
+# Functions (14)
 * `$reset_options_number()` (_dom.js_)
 * `array_fill()` (_array.js_)
 * `array_filter()` (_array.js_)
@@ -6,6 +6,7 @@
 * `days_in_month()` (_date.js_)
 * `in_range()` (_range.js_)
 * `limit()` (_range.js_)
+* `on_document_load()` (_dom.js_)
 * `random()` (_random.js_)
 * `random_fill()` (_random.js_)
 * `random_in()` (_random.js_)
@@ -21,8 +22,9 @@
 * `current_year()`
 * `days_in_month()`
 
-## DOM Functions (2)
+## DOM Functions (3)
 * `$reset_options_number()`
+* `on_document_load()`
 * `reset_options_number()`
 
 ## Location Functions (2)
