@@ -1,4 +1,7 @@
-# Classes (18)
+# Classes (19)
+
+## Utils (1)
+* NSCL\Utils\\`PluginUtils`
 
 ## WordPress/Cron (2)
 * NSCL\WordPress\Cron\\`CronInterval`
