@@ -3,6 +3,16 @@
 declare(strict_types = 1);
 
 /**
+ * @param float $number The number to test.
+ * @param int $precision Optional. 2 by default.
+ * @return bool
+ */
+function is_float_zero(float $number, int $precision = 2): bool
+{
+    return round($number, $precision) == 0;
+}
+
+/**
  * @param string $url
  * @return bool
  *

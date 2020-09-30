@@ -1,4 +1,4 @@
-# Functions (156)
+# Functions (157)
 * `_get()` (_request.php_)
 * `_post()` (_request.php_)
 * `_request()` (_request.php_)
@@ -65,6 +65,7 @@
 * `is_base_request()` (_wordpress.php_)
 * `is_current_page()` (_wordpress.php_)
 * `is_default_id()` (_wpml.php_)
+* `is_float_zero()` (_validate.php_)
 * `is_translatable_post_type()` (_wpml.php_)
 * `is_wpml_active()` (_wpml.php_)
 * `is_active_plugin()` (_wordpress.php_)
@@ -280,7 +281,8 @@
 ## UUID Functions (1)
 * `uuid_v4()`
 
-## Validation Functions (9)
+## Validation Functions (10)
+* `is_float_zero()`
 * `is_valid_url()`
 * `validate_bool()`
 * `validate_bool_or_string()`
