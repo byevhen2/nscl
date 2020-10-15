@@ -71,9 +71,9 @@ function gmt2utc(float $gmt, bool $addZeroOffset = true): string
 
     $hours = abs((int)$gmt);
 
-    $minutes = abs($gmt) - $hours;
+    $minutes = abs($gmt) - $hours;      // Something like 0.5
     $minutes = round($minutes * 4) / 4; // Limit variants to 0, 0.25, 0.5, 0.75 or 1
-    $minutes = (int)($minutes * 60); // Only 0, 15, 30, 45 or 60 are possible
+    $minutes = (int)($minutes * 60);    // Only 0, 15, 30, 45 or 60 are possible
 
     if ($minutes == 60) {
         $hours++;
