@@ -60,6 +60,10 @@ function array_disjunction(array $a, array $b, array $_ = null): array
  * @param array $array Array to flip.
  * @param bool $arraySingle Optional. Convert single value into array. FALSE by default.
  * @return array
+ *
+ * @see array_group_keys()
+ *
+ * @todo Why so serious?
  */
 function array_flip_duplicates(array $array, bool $arraySingle = false): array
 {
@@ -77,6 +81,27 @@ function array_flip_duplicates(array $array, bool $arraySingle = false): array
     }
 
     return $flip;
+}
+
+/**
+ * @param array $array
+ * @return array
+ *
+ * @see array_flip_duplicates()
+ */
+function array_group_keys(array $array): array
+{
+	$groups = [];
+
+	foreach ($array as $key => $value) {
+		if (array_key_exists($value, $groups)) {
+			$groups[$value][] = $key;
+		} else {
+			$groups[$value] = [$key];
+		}
+	}
+
+	return $groups;
 }
 
 /**

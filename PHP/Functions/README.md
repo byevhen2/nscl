@@ -1,4 +1,4 @@
-# Functions (157)
+# Functions (158)
 * `_get()` (_request.php_)
 * `_post()` (_request.php_)
 * `_request()` (_request.php_)
@@ -11,6 +11,7 @@
 * `ajax_url()` (_wordpress.php_)
 * `array_disjunction()` (_array.php_)
 * `array_flip_duplicates()` (_array.php_)
+* `array_group_keys()` (_array.php_)
 * `array_insert_after()` (_array.php_)
 * `array_insert_after_key()` (_array.php_)
 * `array_length()` (_array.php_)
@@ -155,10 +156,11 @@
 * `wp_time()` (_wordpress.php_)
 * `wrap()` (_format.php; see also array_wrap()_)
 
-## Array Functions (26)
+## Array Functions (27)
 * `aimplodef()`
 * `array_disjunction()`
 * `array_flip_duplicates()`
+* `array_group_keys()`
 * `array_insert_after()`
 * `array_insert_after_key()`
 * `array_length()`
